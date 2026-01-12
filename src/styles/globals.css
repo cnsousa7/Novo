@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #111827;
+  }
+
+  .dark {
+    --background: #111827;
+    --foreground: #f9fafb;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply transition-colors duration-300;
+  }
+}
+
+/* Forçar estilos quando a classe .dark está presente no elemento html ou body */
+:where(.dark) body {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+:where(.dark) .bg-white {
+  background-color: #111827 !important;
+}
+
+:where(.dark) .text-gray-900 {
+  color: #f9fafb !important;
+}
+
+:where(.dark) .bg-gray-50 {
+  background-color: #1f2937 !important;
+}
+
+:where(.dark) .text-gray-600 {
+  color: #d1d5db !important;
+}
+
+:where(.dark) .bg-gray-100 {
+  background-color: #374151 !important;
+}
+
+:where(.dark) .text-gray-700 {
+  color: #e5e7eb !important;
+}
+
+:where(.dark) .bg-gray-800 {
+  background-color: #1f2937 !important;
+}
+
+:where(.dark) .text-gray-300 {
+  color: #d1d5db !important;
+}

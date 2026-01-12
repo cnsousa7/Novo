@@ -65,7 +65,7 @@ export default function LocalPage({ servico, servicoNome, cidade, cidadeNome, ti
                 Atendimento especializado em {servicoNome} para residências, empresas e condomínios em {cidadeNome} - DF
               </p>
               <a
-                href={`https://wa.me/5561992743428?text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome}.`}
+                href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome} com a cnsousatec.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
@@ -172,7 +172,7 @@ export default function LocalPage({ servico, servicoNome, cidade, cidadeNome, ti
                     Entre em contato agora mesmo e agende uma visita técnica.
                   </p>
                   <a
-                    href={`https://wa.me/5561992743428?text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome}.`}
+                    href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome} com a cnsousatec.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:underline"
@@ -202,7 +202,7 @@ export default function LocalPage({ servico, servicoNome, cidade, cidadeNome, ti
                 Entre em contato agora e receba um orçamento personalizado
               </p>
               <a
-                href={`https://wa.me/5561992743428?text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome}.`}
+                href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome} com a cnsousatec.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"

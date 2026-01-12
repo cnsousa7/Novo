@@ -39,7 +39,7 @@ export default function ManutencaoHidraulica() {
                 Serviços completos em sistemas hidráulicos, tubulações e instalações prediais para empresas e condomínios no Distrito Federal
               </p>
               <a
-                href="https://wa.me/5561992743428?text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica."
+                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica com a cnsousatec."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
@@ -241,7 +241,7 @@ export default function ManutencaoHidraulica() {
                 Entre em contato agora e receba um orçamento personalizado
               </p>
               <a
-                href="https://wa.me/5561992743428?text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica."
+                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica com a cnsousatec."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
