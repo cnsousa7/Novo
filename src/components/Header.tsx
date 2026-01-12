@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react';
 
@@ -22,8 +23,18 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-            CN Sousa TEC
+          <Link href="/" className="flex items-center gap-2">
+            <div className="relative w-10 h-10 overflow-hidden rounded-full border-2 border-blue-600">
+              <Image
+                src="/logo.jpg"
+                alt="cnsousatec logo"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+              cnsousatec
+            </span>
           </Link>
 
           {/* Desktop Menu */}
@@ -94,7 +105,7 @@ export default function Header() {
 
             {/* CTA Button */}
             <a
-              href="https://wa.me/5561999999999"
+              href="https://wa.me/5561992743428"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
@@ -192,7 +203,7 @@ export default function Header() {
             </Link>
 
             <a
-              href="https://wa.me/5561999999999"
+              href="https://wa.me/5561992743428"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold text-center transition-colors"

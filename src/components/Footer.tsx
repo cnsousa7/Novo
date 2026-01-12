@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,17 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Sobre */}
           <div>
-            <h3 className="text-xl font-bold mb-4">CN Sousa TEC</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="relative w-8 h-8 overflow-hidden rounded-full border border-blue-600">
+                <Image
+                  src="/logo.jpg"
+                  alt="cnsousatec logo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-bold">cnsousatec</h3>
+            </div>
             <p className="text-gray-400 mb-4">
               Especialistas em manutenção elétrica, eletrônica e hidráulica no Distrito Federal.
             </p>
@@ -104,11 +115,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-gray-400">
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span>(61) 99999-9999</span>
+                <span>(61) 99274-3428</span>
               </li>
               <li className="flex items-start gap-2 text-gray-400">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span>contato@cnsousatec.com.br</span>
+                <span>cnsousatec@gmail.com</span>
               </li>
               <li className="flex items-start gap-2 text-gray-400">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
@@ -119,7 +130,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} CN Sousa TEC. Todos os direitos reservados.</p>
+          <p>&copy; {currentYear} cnsousatec. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

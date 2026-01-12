@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>CN Sousa TEC - Manutenção Elétrica, Eletrônica e Hidráulica no DF</title>
+        <title>cnsousatec - Manutenção Elétrica, Eletrônica e Hidráulica no DF</title>
         <meta
           name="description"
           content="Especialistas em manutenção elétrica, eletrônica e hidráulica no Distrito Federal. Atendimento rápido e profissional para empresas, condomínios e residências."
@@ -37,7 +37,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://wa.me/5561999999999"
+                  href="https://wa.me/5561992743428"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center justify-center gap-2"
@@ -180,7 +180,7 @@ export default function Home() {
                   <Phone className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">Telefone</h3>
-                <p className="text-gray-600 dark:text-gray-300">(61) 99999-9999</p>
+                <p className="text-gray-600 dark:text-gray-300">(61) 99274-3428</p>
               </motion.div>
 
               <motion.div
@@ -194,7 +194,7 @@ export default function Home() {
                   <Mail className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">E-mail</h3>
-                <p className="text-gray-600 dark:text-gray-300">contato@cnsousatec.com.br</p>
+                <p className="text-gray-600 dark:text-gray-300">cnsousatec@gmail.com</p>
               </motion.div>
 
               <motion.div

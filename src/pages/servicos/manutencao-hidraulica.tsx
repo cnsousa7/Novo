@@ -8,7 +8,7 @@ export default function ManutencaoHidraulica() {
   return (
     <>
       <Head>
-        <title>Manutenção Hidráulica em Brasília - CN Sousa TEC | Predial e Comercial</title>
+        <title>Manutenção Hidráulica em Brasília - cnsousatec | Predial e Comercial</title>
         <meta
           name="description"
           content="Serviços especializados de manutenção hidráulica em Brasília. Reparos, instalações e manutenção predial para empresas, condomínios e comércio no DF."
@@ -39,7 +39,7 @@ export default function ManutencaoHidraulica() {
                 Serviços completos em sistemas hidráulicos, tubulações e instalações prediais para empresas e condomínios no Distrito Federal
               </p>
               <a
-                href="https://wa.me/5561999999999?text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica."
+                href="https://wa.me/5561992743428?text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
@@ -66,7 +66,7 @@ export default function ManutencaoHidraulica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A <strong>CN Sousa TEC</strong> é referência em serviços de manutenção hidráulica no Distrito Federal, oferecendo soluções completas para empresas, condomínios, prédios comerciais e estabelecimentos de diversos segmentos. Nossa equipe de profissionais qualificados está preparada para atender desde pequenos reparos até grandes projetos de instalação e reforma de sistemas hidráulicos.
+                  A <strong>cnsousatec</strong> é referência em serviços de manutenção hidráulica no Distrito Federal, oferecendo soluções completas para empresas, condomínios, prédios comerciais e estabelecimentos de diversos segmentos. Nossa equipe de profissionais qualificados está preparada para atender desde pequenos reparos até grandes projetos de instalação e reforma de sistemas hidráulicos.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -140,11 +140,11 @@ export default function ManutencaoHidraulica() {
                 </div>
 
                 <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
-                  Por Que Escolher a CN Sousa TEC?
+                  Por Que Escolher a cnsousatec?
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A escolha de um prestador de serviços hidráulicos de confiança é fundamental para garantir a qualidade do trabalho e evitar problemas futuros. A CN Sousa TEC se destaca no mercado por oferecer um serviço completo, desde o diagnóstico até a execução e o pós-venda, sempre com foco na satisfação do cliente.
+                  A escolha de um prestador de serviços hidráulicos de confiança é fundamental para garantir a qualidade do trabalho e evitar problemas futuros. A cnsousatec se destaca no mercado por oferecer um serviço completo, desde o diagnóstico até a execução e o pós-venda, sempre com foco na satisfação do cliente.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -178,7 +178,7 @@ export default function ManutencaoHidraulica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A manutenção hidráulica predial é essencial para garantir o bom funcionamento das instalações de água e esgoto em edifícios comerciais, condomínios e empresas. Problemas como vazamentos, entupimentos e baixa pressão de água podem afetar o conforto dos usuários e causar danos à estrutura do imóvel. A CN Sousa TEC oferece planos de manutenção preventiva que incluem inspeções periódicas, limpeza de caixas d'água, verificação de bombas e registros, e identificação precoce de problemas.
+                  A manutenção hidráulica predial é essencial para garantir o bom funcionamento das instalações de água e esgoto em edifícios comerciais, condomínios e empresas. Problemas como vazamentos, entupimentos e baixa pressão de água podem afetar o conforto dos usuários e causar danos à estrutura do imóvel. A cnsousatec oferece planos de manutenção preventiva que incluem inspeções periódicas, limpeza de caixas d'água, verificação de bombas e registros, e identificação precoce de problemas.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -190,7 +190,7 @@ export default function ManutencaoHidraulica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Vazamentos ocultos são um dos principais vilões do desperdício de água e podem causar danos estruturais graves se não forem detectados a tempo. A CN Sousa TEC utiliza equipamentos de última geração para detecção de vazamentos, incluindo geofones eletrônicos, correlacionadores de ruído e câmeras termográficas. Essas tecnologias permitem identificar vazamentos em tubulações enterradas, embutidas em paredes ou sob pisos, sem a necessidade de quebras desnecessárias.
+                  Vazamentos ocultos são um dos principais vilões do desperdício de água e podem causar danos estruturais graves se não forem detectados a tempo. A cnsousatec utiliza equipamentos de última geração para detecção de vazamentos, incluindo geofones eletrônicos, correlacionadores de ruído e câmeras termográficas. Essas tecnologias permitem identificar vazamentos em tubulações enterradas, embutidas em paredes ou sob pisos, sem a necessidade de quebras desnecessárias.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -202,7 +202,7 @@ export default function ManutencaoHidraulica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Entupimentos são problemas comuns em sistemas hidráulicos e podem ocorrer por diversos motivos, como acúmulo de resíduos, gordura, objetos estranhos ou raízes de árvores nas tubulações. A CN Sousa TEC oferece serviços de desentupimento profissional utilizando equipamentos especializados como hidrojateamento de alta pressão, máquinas rotativas e sondas flexíveis.
+                  Entupimentos são problemas comuns em sistemas hidráulicos e podem ocorrer por diversos motivos, como acúmulo de resíduos, gordura, objetos estranhos ou raízes de árvores nas tubulações. A cnsousatec oferece serviços de desentupimento profissional utilizando equipamentos especializados como hidrojateamento de alta pressão, máquinas rotativas e sondas flexíveis.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -214,7 +214,7 @@ export default function ManutencaoHidraulica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A CN Sousa TEC atende todas as regiões administrativas do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e demais localidades. Contamos com equipes móveis equipadas com ferramentas e materiais, permitindo atendimento rápido e eficiente em qualquer região.
+                  A cnsousatec atende todas as regiões administrativas do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e demais localidades. Contamos com equipes móveis equipadas com ferramentas e materiais, permitindo atendimento rápido e eficiente em qualquer região.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -241,7 +241,7 @@ export default function ManutencaoHidraulica() {
                 Entre em contato agora e receba um orçamento personalizado
               </p>
               <a
-                href="https://wa.me/5561999999999?text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica."
+                href="https://wa.me/5561992743428?text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
