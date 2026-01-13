@@ -6,7 +6,7 @@
     --foreground: #111827;
   }
 
-  [data-theme='dark'] {
+  [data-theme='dark'], .dark {
     --background: #111827;
     --foreground: #f9fafb;
   }
@@ -18,48 +18,19 @@
   }
 }
 
-/* Forçar estilos baseados no atributo data-theme ou classe .dark */
-:root[data-theme='light'], .light {
+/* Estilos para o modo claro (padrão) */
+:root, [data-theme='light'] {
   --background: #ffffff;
   --foreground: #111827;
 }
 
-:root[data-theme='dark'], .dark {
-  --background: #111827;
-  --foreground: #f9fafb;
+/* Sobrescritas para garantir que o Tailwind respeite o data-theme */
+[data-theme='dark'] {
+  color-scheme: dark;
 }
 
-/* Sobrescritas específicas para garantir a troca visual */
-[data-theme='dark'] .bg-white {
-  background-color: #111827 !important;
-}
-
-[data-theme='dark'] .text-gray-900 {
-  color: #f9fafb !important;
-}
-
-[data-theme='dark'] .bg-gray-50 {
-  background-color: #1f2937 !important;
-}
-
-[data-theme='dark'] .text-gray-600 {
-  color: #d1d5db !important;
-}
-
-[data-theme='dark'] .bg-gray-100 {
-  background-color: #374151 !important;
-}
-
-[data-theme='dark'] .text-gray-700 {
-  color: #e5e7eb !important;
-}
-
-[data-theme='dark'] .bg-gray-800 {
-  background-color: #1f2937 !important;
-}
-
-[data-theme='dark'] .text-gray-300 {
-  color: #d1d5db !important;
+[data-theme='light'] {
+  color-scheme: light;
 }
 
 /* Otimização de performance para animações */
