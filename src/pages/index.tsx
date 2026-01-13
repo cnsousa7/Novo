@@ -75,19 +75,22 @@ export default function Home() {
                   title: "Manutenção Elétrica",
                   desc: "Instalações, reparos e manutenção preventiva em sistemas elétricos para empresas e condomínios.",
                   icon: <Zap className="w-8 h-8 text-blue-600" />,
-                  link: "/servicos/manutencao-eletrica"
+                  link: "/servicos/manutencao-eletrica",
+                  image: "/images/eletrica.jpg"
                 },
                 {
                   title: "Manutenção Eletrônica",
                   desc: "Reparo e manutenção de equipamentos eletrônicos, sistemas de automação e controle.",
                   icon: <Shield className="w-8 h-8 text-purple-600" />,
-                  link: "/servicos/manutencao-eletronica"
+                  link: "/servicos/manutencao-eletronica",
+                  image: "/images/eletronica.jpg"
                 },
                 {
                   title: "Manutenção Hidráulica",
                   desc: "Serviços completos em sistemas hidráulicos, tubulações e instalações prediais.",
                   icon: <Clock className="w-8 h-8 text-cyan-600" />,
-                  link: "/servicos/manutencao-hidraulica"
+                  link: "/servicos/manutencao-hidraulica",
+                  image: "/images/hidraulica.jpg"
                 }
               ].map((service, index) => (
                 <motion.div
@@ -96,14 +99,23 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-100 dark:border-gray-700"
+                  className="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-100 dark:border-gray-700 overflow-hidden"
                 >
-                  <div className="mb-6">{service.icon}</div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{service.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">{service.desc}</p>
-                  <Link href={service.link} className="text-blue-600 dark:text-blue-400 font-semibold inline-flex items-center gap-2 hover:underline">
-                    Saiba mais <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="mb-6">{service.icon}</div>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{service.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">{service.desc}</p>
+                    <Link href={service.link} className="text-blue-600 dark:text-blue-400 font-semibold inline-flex items-center gap-2 hover:underline">
+                      Saiba mais <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </motion.div>
               ))}
             </div>
