@@ -6,7 +6,7 @@
     --foreground: #111827;
   }
 
-  .dark {
+  [data-theme='dark'] {
     --background: #111827;
     --foreground: #f9fafb;
   }
@@ -14,44 +14,56 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-200;
   }
 }
 
-/* Forçar estilos quando a classe .dark está presente no elemento html ou body */
-:where(.dark) body {
-  background-color: #111827;
-  color: #f9fafb;
+/* Forçar estilos baseados no atributo data-theme ou classe .dark */
+:root[data-theme='light'], .light {
+  --background: #ffffff;
+  --foreground: #111827;
 }
 
-:where(.dark) .bg-white {
+:root[data-theme='dark'], .dark {
+  --background: #111827;
+  --foreground: #f9fafb;
+}
+
+/* Sobrescritas específicas para garantir a troca visual */
+[data-theme='dark'] .bg-white {
   background-color: #111827 !important;
 }
 
-:where(.dark) .text-gray-900 {
+[data-theme='dark'] .text-gray-900 {
   color: #f9fafb !important;
 }
 
-:where(.dark) .bg-gray-50 {
+[data-theme='dark'] .bg-gray-50 {
   background-color: #1f2937 !important;
 }
 
-:where(.dark) .text-gray-600 {
+[data-theme='dark'] .text-gray-600 {
   color: #d1d5db !important;
 }
 
-:where(.dark) .bg-gray-100 {
+[data-theme='dark'] .bg-gray-100 {
   background-color: #374151 !important;
 }
 
-:where(.dark) .text-gray-700 {
+[data-theme='dark'] .text-gray-700 {
   color: #e5e7eb !important;
 }
 
-:where(.dark) .bg-gray-800 {
+[data-theme='dark'] .bg-gray-800 {
   background-color: #1f2937 !important;
 }
 
-:where(.dark) .text-gray-300 {
+[data-theme='dark'] .text-gray-300 {
   color: #d1d5db !important;
+}
+
+/* Otimização de performance para animações */
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
 }

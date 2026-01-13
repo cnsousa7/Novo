@@ -24,7 +24,12 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+    <ThemeProvider 
+      attribute="data-theme" 
+      defaultTheme="light" 
+      enableSystem={false}
+      storageKey="cnsousatec-theme"
+    >
       <Component {...pageProps} />
     </ThemeProvider>
   );
