@@ -8,13 +8,13 @@ export default function ManutencaoEletrica() {
   return (
     <>
       <Head>
-        <title>Manutenção Elétrica em Brasília - cnsousatec | Empresas e Condomínios</title>
+        <title>Manutenção Elétrica em Brasília - Cnsousatec | Empresas e Condomínios</title>
         <meta
           name="description"
           content="Serviços especializados de manutenção elétrica em Brasília para empresas, condomínios e prédios comerciais. Instalações, reparos e manutenção preventiva com equipe qualificada."
         />
         <meta name="keywords" content="manutenção elétrica brasília, eletricista brasília, instalação elétrica, manutenção preventiva elétrica, reparo elétrico empresas" />
-        <link rel="canonical" href="https://www.cnsousatec.com.br/servicos/manutencao-eletrica" />
+        <link rel="canonical" href="https://www.Cnsousatec.com.br/servicos/manutencao-eletrica" />
       </Head>
 
       <Header />
@@ -39,7 +39,7 @@ export default function ManutencaoEletrica() {
                 Soluções completas em instalações e manutenção elétrica para empresas, condomínios e prédios comerciais no Distrito Federal
               </p>
               <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção elétrica com a cnsousatec."
+                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção elétrica com a Cnsousatec."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
@@ -66,7 +66,7 @@ export default function ManutencaoEletrica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A <strong>cnsousatec</strong> é referência em serviços de manutenção elétrica no Distrito Federal, oferecendo soluções completas e personalizadas para empresas, condomínios e estabelecimentos comerciais. Nossa equipe de profissionais altamente qualificados está preparada para atender todas as suas necessidades em instalações elétricas, desde projetos simples até sistemas complexos de alta tensão.
+                  A <strong>Cnsousatec</strong> é referência em serviços de manutenção elétrica no Distrito Federal, oferecendo soluções completas e personalizadas para empresas, condomínios e estabelecimentos comerciais. Nossa equipe de profissionais altamente qualificados está preparada para atender todas as suas necessidades em instalações elétricas, desde projetos simples até sistemas complexos de alta tensão.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -140,11 +140,11 @@ export default function ManutencaoEletrica() {
                 </div>
 
                 <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
-                  Por Que Escolher a cnsousatec?
+                  Por Que Escolher a Cnsousatec?
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Quando se trata de manutenção elétrica, a escolha do prestador de serviços é crucial para garantir segurança, qualidade e tranquilidade. A cnsousatec se destaca no mercado por diversos motivos que fazem a diferença no resultado final do trabalho.
+                  Quando se trata de manutenção elétrica, a escolha do prestador de serviços é crucial para garantir segurança, qualidade e tranquilidade. A Cnsousatec se destaca no mercado por diversos motivos que fazem a diferença no resultado final do trabalho.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -190,7 +190,7 @@ export default function ManutencaoEletrica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A cnsousatec atende todas as regiões administrativas do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e demais localidades. Nossa frota está estrategicamente posicionada para garantir atendimento rápido e eficiente em qualquer região.
+                  A Cnsousatec atende todas as regiões administrativas do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e demais localidades. Nossa frota está estrategicamente posicionada para garantir atendimento rápido e eficiente em qualquer região.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -217,7 +217,7 @@ export default function ManutencaoEletrica() {
                 Entre em contato agora e receba um orçamento personalizado
               </p>
               <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção elétrica com a cnsousatec."
+                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção elétrica com a Cnsousatec."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"

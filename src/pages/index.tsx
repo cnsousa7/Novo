@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Head>
-        <title>cnsousatec - Manutenção Elétrica, Eletrônica e Hidráulica no DF</title>
+        <title>Cnsousatec - Manutenção Elétrica, Eletrônica e Hidráulica no DF</title>
         <meta name="description" content="Serviços especializados de manutenção elétrica, eletrônica e hidráulica para empresas, condomínios e residências em todo o Distrito Federal." />
       </Head>
 
@@ -37,7 +37,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a cnsousatec."
+                  href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center justify-center gap-2"
@@ -127,7 +127,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="md:w-1/2">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Por que escolher a cnsousatec?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Por que escolher a Cnsousatec?</h2>
                 <div className="space-y-4">
                   {[
                     "Equipe técnica altamente qualificada",
@@ -149,7 +149,7 @@ export default function Home() {
                   Nossos especialistas estão prontos para avaliar sua necessidade e propor a melhor solução.
                 </p>
                 <a
-                  href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar uma visita técnica com a cnsousatec."
+                  href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar uma visita técnica com a Cnsousatec."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-center block transition-colors duration-200"
@@ -175,7 +175,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-4">
                     <Mail className="w-6 h-6" />
-                    <span>cnsousatec@gmail.com</span>
+                    <span>Cnsousatec@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <MapPin className="w-6 h-6" />
@@ -189,7 +189,7 @@ export default function Home() {
                   Clique no botão abaixo para iniciar uma conversa direta pelo WhatsApp.
                 </p>
                 <a
-                  href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a cnsousatec."
+                  href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-center block transition-colors duration-200"

@@ -2,12 +2,12 @@ export default function SchemaLocalBusiness() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://www.cnsousatec.com.br',
+    '@id': 'https://www.Cnsousatec.com.br',
     name: 'CN Sousa TEC',
     description: 'Especialistas em manutenção elétrica, eletrônica e hidráulica no Distrito Federal',
-    url: 'https://www.cnsousatec.com.br',
+    url: 'https://www.Cnsousatec.com.br',
     telephone: '+55-61-99999-9999',
-    email: 'contato@cnsousatec.com.br',
+    email: 'contato@Cnsousatec.com.br',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Brasília',
@@ -73,9 +73,9 @@ export default function SchemaLocalBusiness() {
       },
     ],
     sameAs: [
-      'https://www.facebook.com/cnsousatec',
-      'https://www.instagram.com/cnsousatec',
-      'https://www.linkedin.com/company/cnsousatec',
+      'https://www.facebook.com/Cnsousatec',
+      'https://www.instagram.com/Cnsousatec',
+      'https://www.linkedin.com/company/Cnsousatec',
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

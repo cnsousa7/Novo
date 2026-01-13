@@ -15,12 +15,12 @@ export default function Footer() {
               <div className="relative w-8 h-8 overflow-hidden rounded-full border border-blue-600">
                 <Image
                   src="/logo.jpg"
-                  alt="cnsousatec logo"
+                  alt="Cnsousatec logo"
                   fill
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold">cnsousatec</h3>
+              <h3 className="text-xl font-bold">Cnsousatec</h3>
             </div>
             <p className="text-gray-400 mb-4">
               Especialistas em manutenção elétrica, eletrônica e hidráulica no Distrito Federal.
@@ -119,7 +119,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-gray-400">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span>cnsousatec@gmail.com</span>
+                <span>Cnsousatec@gmail.com</span>
               </li>
               <li className="flex items-start gap-2 text-gray-400">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
@@ -130,7 +130,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} cnsousatec. Todos os direitos reservados.</p>
+          <p>&copy; {currentYear} Cnsousatec. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

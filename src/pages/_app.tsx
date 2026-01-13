@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
       attribute="data-theme" 
       defaultTheme="light" 
       enableSystem={false}
-      storageKey="cnsousatec-theme"
+      storageKey="Cnsousatec-theme"
     >
       <Component {...pageProps} />
     </ThemeProvider>

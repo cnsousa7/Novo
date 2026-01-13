@@ -20,7 +20,7 @@ const cidades = [
 ];
 
 function generateSiteMap() {
-  const baseUrl = 'https://www.cnsousatec.com.br';
+  const baseUrl = 'https://www.Cnsousatec.com.br';
   
   // URLs estáticas
   const staticUrls = [

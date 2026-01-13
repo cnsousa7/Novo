@@ -21,7 +21,7 @@ export default function Header() {
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
-  const whatsappUrl = "https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a cnsousatec.";
+  const whatsappUrl = "https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec.";
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300">
@@ -32,13 +32,13 @@ export default function Header() {
             <div className="relative w-10 h-10 overflow-hidden rounded-full border-2 border-blue-600">
               <Image
                 src="/logo.jpg"
-                alt="cnsousatec logo"
+                alt="Cnsousatec logo"
                 fill
                 className="object-cover"
               />
             </div>
             <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-              cnsousatec
+              Cnsousatec
             </span>
           </Link>
 

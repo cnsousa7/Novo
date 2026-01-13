@@ -40,7 +40,7 @@ export default function LocalPage({ servico, servicoNome, cidade, cidadeNome, ti
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={`${servicoNome} ${cidadeNome}, ${servico} ${cidade}, serviços ${cidadeNome}`} />
-        <link rel="canonical" href={`https://www.cnsousatec.com.br/local/${servico}-${cidade}`} />
+        <link rel="canonical" href={`https://www.Cnsousatec.com.br/local/${servico}-${cidade}`} />
       </Head>
 
       <Header />
@@ -65,7 +65,7 @@ export default function LocalPage({ servico, servicoNome, cidade, cidadeNome, ti
                 Atendimento especializado em {servicoNome} para residências, empresas e condomínios em {cidadeNome} - DF
               </p>
               <a
-                href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome} com a cnsousatec.`}
+                href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome} com a Cnsousatec.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
@@ -92,7 +92,7 @@ export default function LocalPage({ servico, servicoNome, cidade, cidadeNome, ti
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A <strong>cnsousatec</strong> é a sua melhor escolha para serviços de <strong>{servicoNome}</strong> em <strong>{cidadeNome}</strong>. 
+                  A <strong>Cnsousatec</strong> é a sua melhor escolha para serviços de <strong>{servicoNome}</strong> em <strong>{cidadeNome}</strong>. 
                   Atendemos residências, empresas, condomínios e estabelecimentos comerciais com equipe qualificada e equipamentos modernos.
                 </p>
 
@@ -102,7 +102,7 @@ export default function LocalPage({ servico, servicoNome, cidade, cidadeNome, ti
                 </p>
 
                 <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
-                  Por Que Escolher a cnsousatec em {cidadeNome}?
+                  Por Que Escolher a Cnsousatec em {cidadeNome}?
                 </h2>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -168,11 +168,11 @@ export default function LocalPage({ servico, servicoNome, cidade, cidadeNome, ti
                     Atendemos {cidadeNome} e Região
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    A cnsousatec possui equipes móveis prontas para atender {cidadeNome} com agilidade. 
+                    A Cnsousatec possui equipes móveis prontas para atender {cidadeNome} com agilidade. 
                     Entre em contato agora mesmo e agende uma visita técnica.
                   </p>
                   <a
-                    href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome} com a cnsousatec.`}
+                    href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome} com a Cnsousatec.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:underline"
@@ -202,7 +202,7 @@ export default function LocalPage({ servico, servicoNome, cidade, cidadeNome, ti
                 Entre em contato agora e receba um orçamento personalizado
               </p>
               <a
-                href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome} com a cnsousatec.`}
+                href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para ${servicoNome} em ${cidadeNome} com a Cnsousatec.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
@@ -259,7 +259,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const servicoNome = servicos[servicoKey as keyof typeof servicos] || 'Serviço';
   const cidadeNome = cidades[cidadeKey as keyof typeof cidades] || 'Brasília';
 
-  const title = `${servicoNome} em ${cidadeNome} - cnsousatec | Atendimento Rápido`;
+  const title = `${servicoNome} em ${cidadeNome} - Cnsousatec | Atendimento Rápido`;
   const description = `Serviços de ${servicoNome} em ${cidadeNome} - DF. Atendimento profissional para residências, empresas e condomínios. Orçamento grátis!`;
 
   return {

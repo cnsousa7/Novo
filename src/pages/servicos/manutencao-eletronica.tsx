@@ -8,13 +8,13 @@ export default function ManutencaoEletronica() {
   return (
     <>
       <Head>
-        <title>Manutenção Eletrônica em Brasília - cnsousatec | Equipamentos e Sistemas</title>
+        <title>Manutenção Eletrônica em Brasília - Cnsousatec | Equipamentos e Sistemas</title>
         <meta
           name="description"
           content="Serviços especializados de manutenção eletrônica em Brasília. Reparo de equipamentos, sistemas de automação, controle e instrumentação para empresas."
         />
         <meta name="keywords" content="manutenção eletrônica brasília, reparo equipamentos eletrônicos, automação industrial, manutenção sistemas eletrônicos" />
-        <link rel="canonical" href="https://www.cnsousatec.com.br/servicos/manutencao-eletronica" />
+        <link rel="canonical" href="https://www.Cnsousatec.com.br/servicos/manutencao-eletronica" />
       </Head>
 
       <Header />
@@ -39,7 +39,7 @@ export default function ManutencaoEletronica() {
                 Reparo e manutenção de equipamentos eletrônicos, sistemas de automação e controle industrial no Distrito Federal
               </p>
               <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção eletrônica com a cnsousatec."
+                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção eletrônica com a Cnsousatec."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
@@ -66,7 +66,7 @@ export default function ManutencaoEletronica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A <strong>cnsousatec</strong> é especializada em manutenção eletrônica, oferecendo serviços de alta qualidade para empresas que dependem de equipamentos eletrônicos e sistemas automatizados em suas operações. Nossa equipe técnica possui vasta experiência no diagnóstico, reparo e manutenção de uma ampla gama de dispositivos eletrônicos, desde equipamentos simples até sistemas complexos de automação industrial.
+                  A <strong>Cnsousatec</strong> é especializada em manutenção eletrônica, oferecendo serviços de alta qualidade para empresas que dependem de equipamentos eletrônicos e sistemas automatizados em suas operações. Nossa equipe técnica possui vasta experiência no diagnóstico, reparo e manutenção de uma ampla gama de dispositivos eletrônicos, desde equipamentos simples até sistemas complexos de automação industrial.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -140,11 +140,11 @@ export default function ManutencaoEletronica() {
                 </div>
 
                 <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
-                  Diferenciais da cnsousatec
+                  Diferenciais da Cnsousatec
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A manutenção eletrônica exige conhecimento técnico especializado, ferramentas adequadas e experiência prática. A cnsousatec reúne todos esses elementos para oferecer um serviço de excelência aos seus clientes. Nossa equipe é formada por técnicos e engenheiros eletrônicos com certificações reconhecidas e experiência em diversos segmentos industriais.
+                  A manutenção eletrônica exige conhecimento técnico especializado, ferramentas adequadas e experiência prática. A Cnsousatec reúne todos esses elementos para oferecer um serviço de excelência aos seus clientes. Nossa equipe é formada por técnicos e engenheiros eletrônicos com certificações reconhecidas e experiência em diversos segmentos industriais.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -190,7 +190,7 @@ export default function ManutencaoEletronica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A automação industrial é uma área em constante evolução, e a cnsousatec acompanha as últimas tendências e tecnologias do setor. Prestamos serviços de manutenção em sistemas de automação baseados em CLPs (Controladores Lógicos Programáveis) de marcas como Siemens, Allen-Bradley, Schneider Electric, WEG e outras. Também trabalhamos com interfaces homem-máquina (IHM), sistemas SCADA, redes industriais e protocolos de comunicação como Profibus, Modbus e Ethernet/IP.
+                  A automação industrial é uma área em constante evolução, e a Cnsousatec acompanha as últimas tendências e tecnologias do setor. Prestamos serviços de manutenção em sistemas de automação baseados em CLPs (Controladores Lógicos Programáveis) de marcas como Siemens, Allen-Bradley, Schneider Electric, WEG e outras. Também trabalhamos com interfaces homem-máquina (IHM), sistemas SCADA, redes industriais e protocolos de comunicação como Profibus, Modbus e Ethernet/IP.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -202,7 +202,7 @@ export default function ManutencaoEletronica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A cnsousatec atende empresas em todas as regiões do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e outras localidades. Contamos com uma equipe móvel equipada com ferramentas e instrumentos de diagnóstico, permitindo atendimento rápido e eficiente no local do cliente quando necessário.
+                  A Cnsousatec atende empresas em todas as regiões do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e outras localidades. Contamos com uma equipe móvel equipada com ferramentas e instrumentos de diagnóstico, permitindo atendimento rápido e eficiente no local do cliente quando necessário.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -229,7 +229,7 @@ export default function ManutencaoEletronica() {
                 Entre em contato agora e receba um orçamento personalizado
               </p>
               <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção eletrônica com a cnsousatec."
+                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção eletrônica com a Cnsousatec."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
