@@ -79,18 +79,18 @@ export default function Home() {
                   image: "/images/eletrica.jpg"
                 },
                 {
-                  title: "Manutenção Eletrônica",
-                  desc: "Reparo e manutenção de equipamentos eletrônicos, sistemas de automação e controle.",
-                  icon: <Shield className="w-8 h-8 text-purple-600" />,
-                  link: "/servicos/manutencao-eletronica",
-                  image: "/images/eletronica.jpg"
-                },
-                {
                   title: "Manutenção Hidráulica",
                   desc: "Serviços completos em sistemas hidráulicos, tubulações e instalações prediais.",
                   icon: <Clock className="w-8 h-8 text-cyan-600" />,
                   link: "/servicos/manutencao-hidraulica",
                   image: "/images/hidraulica.jpg"
+                },
+                {
+                  title: "Manutenção Eletrônica",
+                  desc: "Reparo e manutenção de equipamentos eletrônicos, sistemas de automação e controle.",
+                  icon: <Shield className="w-8 h-8 text-purple-600" />,
+                  link: "/servicos/manutencao-eletronica",
+                  image: "/images/eletronica.jpg"
                 }
               ].map((service, index) => (
                 <motion.div
