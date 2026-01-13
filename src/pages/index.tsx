@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SchemaLocalBusiness from '@/components/SchemaLocalBusiness';
 
-const fastTransition = { duration: 0.3, ease: "easeOut" };
+const fastTransition = { duration: 0.3, ease: "easeOut" as const };
 
 export default function Home() {
   return (
