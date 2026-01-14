@@ -1,14 +1,16 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { initGA, logPageView } from '@/lib/analytics';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     initGA();
   }, []);
 
@@ -23,11 +25,20 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
 
+  // Evitar erros de hidratação garantindo que o tema só seja aplicado após a montagem
+  if (!mounted) {
+    return (
+      <div style={{ visibility: 'hidden' }}>
+        <Component {...pageProps} />
+      </div>
+    );
+  }
+
   return (
     <ThemeProvider 
       attribute="data-theme" 
       defaultTheme="light" 
-      enableSystem={false}
+      enableSystem={true}
       storageKey="Cnsousatec-theme"
     >
       <Component {...pageProps} />

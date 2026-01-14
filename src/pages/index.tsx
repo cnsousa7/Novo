@@ -162,42 +162,64 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contato" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <section id="contato" className="py-20 bg-gray-50 dark:bg-gray-900/50 transition-colors duration-300">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-              <div className="md:w-1/2 bg-blue-600 p-12 text-white">
-                <h2 className="text-3xl font-bold mb-8">Entre em Contato</h2>
-                <p className="mb-8 text-blue-100">Estamos prontos para atender suas necessidades</p>
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <Phone className="w-6 h-6" />
-                    <span>(61) 99274-3428</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <Mail className="w-6 h-6" />
-                    <span>Cnsousatec@gmail.com</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <MapPin className="w-6 h-6" />
-                    <span>Brasília - DF</span>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100 dark:border-gray-800"
+            >
+              <div className="md:w-1/2 bg-gradient-to-br from-blue-600 to-blue-700 p-12 text-white relative overflow-hidden">
+                <div className="relative z-10">
+                  <h2 className="text-4xl font-bold mb-8">Entre em Contato</h2>
+                  <p className="mb-12 text-blue-100 text-lg">Estamos prontos para atender suas necessidades com excelência e rapidez.</p>
+                  <div className="space-y-8">
+                    {[
+                      { icon: <Phone className="w-6 h-6" />, text: "(61) 99274-3428", label: "Telefone" },
+                      { icon: <Mail className="w-6 h-6" />, text: "Cnsousatec@gmail.com", label: "E-mail" },
+                      { icon: <MapPin className="w-6 h-6" />, text: "Brasília - DF", label: "Localização" }
+                    ].map((item, i) => (
+                      <motion.div 
+                        key={i}
+                        whileHover={{ x: 10 }}
+                        className="flex items-center gap-5 group cursor-pointer"
+                      >
+                        <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <p className="text-xs text-blue-200 uppercase tracking-wider font-semibold">{item.label}</p>
+                          <p className="text-lg font-medium">{item.text}</p>
+                        </div>
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
+                {/* Decorative circles */}
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+                <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl"></div>
               </div>
-              <div className="md:w-1/2 p-12">
-                <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Mande uma mensagem</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-8">
-                  Clique no botão abaixo para iniciar uma conversa direta pelo WhatsApp.
+              
+              <div className="md:w-1/2 p-12 flex flex-col justify-center bg-white dark:bg-gray-900">
+                <h3 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Mande uma mensagem</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-10 text-lg leading-relaxed">
+                  Prefere um atendimento instantâneo? Clique no botão abaixo e fale diretamente com nossa equipe técnica pelo WhatsApp.
                 </p>
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.03, translateY: -5 }}
+                  whileTap={{ scale: 0.98 }}
                   href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-center block transition-colors duration-200"
+                  className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-5 px-8 rounded-2xl text-xl text-center shadow-lg shadow-green-500/20 transition-all flex items-center justify-center gap-3"
                 >
-                  Iniciar Conversa
-                </a>
+                  <Phone className="w-6 h-6" /> Iniciar Conversa
+                </motion.a>
+                <p className="text-center mt-6 text-sm text-gray-500 dark:text-gray-400">Resposta média em menos de 15 minutos</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>
