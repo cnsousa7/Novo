@@ -162,20 +162,40 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contato" className="py-20 bg-gray-50 dark:bg-gray-900/50 transition-colors duration-300">
-          <div className="container mx-auto px-4">
+        <section id="contato" className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800/50 transition-colors duration-300 relative overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-green-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100 dark:border-gray-800"
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
             >
-              <div className="md:w-1/2 bg-gradient-to-br from-blue-600 to-blue-700 p-12 text-white relative overflow-hidden">
-                <div className="relative z-10">
-                  <h2 className="text-4xl font-bold mb-8">Entre em Contato</h2>
-                  <p className="mb-12 text-blue-100 text-lg">Estamos prontos para atender suas necessidades com excelência e rapidez.</p>
-                  <div className="space-y-8">
+              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent mb-6">Vamos Conversar?</h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Estamos aqui para transformar suas ideias em soluções reais</p>
+            </motion.div>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* Contact Info Card */}
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 rounded-[40px] blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-[40px] p-10 md:p-12 border border-white/20 dark:border-gray-700/20 shadow-2xl">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 dark:text-white">Entre em Contato</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-12 text-lg">Estamos prontos para atender suas necessidades com excelência e rapidez.</p>
+                  
+                  <div className="space-y-6">
                     {[
                       { icon: <Phone className="w-6 h-6" />, text: "(61) 99274-3428", label: "Telefone" },
                       { icon: <Mail className="w-6 h-6" />, text: "Cnsousatec@gmail.com", label: "E-mail" },
@@ -183,43 +203,50 @@ export default function Home() {
                     ].map((item, i) => (
                       <motion.div 
                         key={i}
-                        whileHover={{ x: 10 }}
-                        className="flex items-center gap-5 group cursor-pointer"
+                        whileHover={{ x: 8 }}
+                        className="flex items-center gap-5 group/item cursor-pointer"
                       >
-                        <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white shadow-lg group-hover/item:shadow-xl transition-all group-hover/item:scale-110">
                           {item.icon}
                         </div>
                         <div>
-                          <p className="text-xs text-blue-200 uppercase tracking-wider font-semibold">{item.label}</p>
-                          <p className="text-lg font-medium">{item.text}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold">{item.label}</p>
+                          <p className="text-lg font-semibold text-gray-900 dark:text-white">{item.text}</p>
                         </div>
                       </motion.div>
                     ))}
                   </div>
                 </div>
-                {/* Decorative circles */}
-                <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-                <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl"></div>
-              </div>
+              </motion.div>
               
-              <div className="md:w-1/2 p-12 flex flex-col justify-center bg-white dark:bg-gray-900">
-                <h3 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Mande uma mensagem</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-10 text-lg leading-relaxed">
-                  Prefere um atendimento instantâneo? Clique no botão abaixo e fale diretamente com nossa equipe técnica pelo WhatsApp.
-                </p>
-                <motion.a
-                  whileHover={{ scale: 1.03, translateY: -5 }}
-                  whileTap={{ scale: 0.98 }}
-                  href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-5 px-8 rounded-2xl text-xl text-center shadow-lg shadow-green-500/20 transition-all flex items-center justify-center gap-3"
-                >
-                  <Phone className="w-6 h-6" /> Iniciar Conversa
-                </motion.a>
-                <p className="text-center mt-6 text-sm text-gray-500 dark:text-gray-400">Resposta média em menos de 15 minutos</p>
-              </div>
-            </motion.div>
+              {/* CTA Card */}
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-[40px] blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <div className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-[40px] p-10 md:p-12 border border-white/20 dark:border-gray-700/20 shadow-2xl flex flex-col justify-center">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 dark:text-white">Mande uma Mensagem</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-10 text-lg leading-relaxed">
+                    Prefere um atendimento instantâneo? Clique no botão abaixo e fale diretamente com nossa equipe técnica pelo WhatsApp.
+                  </p>
+                  <motion.a
+                    whileHover={{ scale: 1.05, translateY: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-6 px-8 rounded-3xl text-xl shadow-2xl shadow-green-500/30 transition-all flex items-center justify-center gap-3 group/btn"
+                  >
+                    <Phone className="w-6 h-6 group-hover/btn:rotate-12 transition-transform" /> Iniciar Conversa
+                  </motion.a>
+                  <p className="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">⚡ Resposta média em menos de 15 minutos</p>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
       </main>
