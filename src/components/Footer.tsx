@@ -70,18 +70,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/servicos/manutencao-eletronica"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Manutenção Eletrônica
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/servicos/manutencao-hidraulica"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Manutenção Hidráulica
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/servicos/manutencao-eletronica"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Manutenção Eletrônica
                 </Link>
               </li>
             </ul>

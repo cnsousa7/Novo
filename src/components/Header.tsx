@@ -60,11 +60,11 @@ export default function Header() {
                   <Link href="/servicos/manutencao-eletrica" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" onClick={() => setServicesOpen(false)}>
                     Manutenção Elétrica
                   </Link>
-                  <Link href="/servicos/manutencao-eletronica" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" onClick={() => setServicesOpen(false)}>
-                    Manutenção Eletrônica
-                  </Link>
                   <Link href="/servicos/manutencao-hidraulica" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" onClick={() => setServicesOpen(false)}>
                     Manutenção Hidráulica
+                  </Link>
+                  <Link href="/servicos/manutencao-eletronica" className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" onClick={() => setServicesOpen(false)}>
+                    Manutenção Eletrônica
                   </Link>
                 </div>
               )}
@@ -132,11 +132,11 @@ export default function Header() {
             <Link href="/servicos/manutencao-eletrica" className="block text-gray-700 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>
               Manutenção Elétrica
             </Link>
-            <Link href="/servicos/manutencao-eletronica" className="block text-gray-700 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>
-              Manutenção Eletrônica
-            </Link>
             <Link href="/servicos/manutencao-hidraulica" className="block text-gray-700 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>
               Manutenção Hidráulica
+            </Link>
+            <Link href="/servicos/manutencao-eletronica" className="block text-gray-700 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>
+              Manutenção Eletrônica
             </Link>
             <Link href="/#contato" className="block text-gray-700 dark:text-gray-300" onClick={() => setMobileMenuOpen(false)}>
               Contato
