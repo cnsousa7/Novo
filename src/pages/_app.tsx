@@ -32,7 +32,6 @@ export default function App({ Component, pageProps }: AppProps) {
       defaultTheme="system" 
       enableSystem={true}
       storageKey="Cnsousatec-theme"
-      disableTransitionOnChange={false}
     >
       {mounted ? (
         <>
