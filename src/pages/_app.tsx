@@ -37,10 +37,11 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider 
-      attribute="data-theme" 
+      attribute="class" 
       defaultTheme="light" 
       enableSystem={true}
       storageKey="Cnsousatec-theme"
+      forcedTheme={mounted ? undefined : 'light'}
     >
       <Component {...pageProps} />
       <SpeedInsights />

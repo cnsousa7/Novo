@@ -17,8 +17,6 @@ export default function Header() {
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
-    // Forçar atualização do atributo no elemento raiz para garantir a troca visual imediata
-    document.documentElement.setAttribute('data-theme', newTheme);
   };
 
   const whatsappUrl = "https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec.";

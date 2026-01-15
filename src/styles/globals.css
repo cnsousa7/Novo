@@ -13,7 +13,7 @@
     --border: #e5e7eb;
   }
 
-  [data-theme='dark'] {
+  .dark {
     --background: #0f172a;
     --foreground: #f8fafc;
     --card: #1e293b;
@@ -42,16 +42,4 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-}
-
-/* Forçar cores em elementos específicos que podem estar ignorando o tema */
-.dark body {
-  background-color: #0f172a;
-  color: #f8fafc;
-}
-
-/* Garantir que o modo claro seja o padrão absoluto se nada for detectado */
-:root:not([data-theme='dark']) {
-  --background: #ffffff;
-  --foreground: #111827;
 }
