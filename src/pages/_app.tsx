@@ -26,25 +26,24 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
 
-  // Evitar erros de hidratação garantindo que o tema só seja aplicado após a montagem
-  if (!mounted) {
-    return (
-      <div style={{ visibility: 'hidden' }}>
-        <Component {...pageProps} />
-      </div>
-    );
-  }
-
   return (
     <ThemeProvider 
       attribute="class" 
       defaultTheme="light" 
       enableSystem={true}
       storageKey="Cnsousatec-theme"
-      forcedTheme={mounted ? undefined : 'light'}
+      disableTransitionOnChange={false}
     >
-      <Component {...pageProps} />
-      <SpeedInsights />
+      {mounted ? (
+        <>
+          <Component {...pageProps} />
+          <SpeedInsights />
+        </>
+      ) : (
+        <div style={{ visibility: 'hidden' }}>
+          <Component {...pageProps} />
+        </div>
+      )}
     </ThemeProvider>
   );
 }
