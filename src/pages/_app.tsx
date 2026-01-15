@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider 
       attribute="class" 
-      defaultTheme="light" 
+      defaultTheme="system" 
       enableSystem={true}
       storageKey="Cnsousatec-theme"
       disableTransitionOnChange={false}

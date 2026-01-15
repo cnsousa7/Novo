@@ -21,7 +21,7 @@ export default function ManutencaoEletrica() {
 
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+        <section className="bg-gradient-to-br from-blue-600 to-blue-800 dark:from-blue-900 dark:to-blue-950 text-white py-16 transition-colors duration-300">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -202,7 +202,7 @@ export default function ManutencaoEletrica() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-blue-600 text-white py-16">
+        <section className="bg-blue-600 dark:bg-blue-900 text-white py-16 transition-colors duration-300">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

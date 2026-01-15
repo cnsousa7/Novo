@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white border-t dark:border-gray-800">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Sobre */}
@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
               <h3 className="text-xl font-bold">Cnsousatec</h3>
             </div>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               Especialistas em manutenção elétrica, eletrônica e hidráulica no Distrito Federal.
             </p>
             <div className="flex gap-4">
@@ -30,7 +30,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-600 dark:text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
@@ -39,7 +39,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-600 dark:text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -48,7 +48,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-600 dark:text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -63,7 +63,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/servicos/manutencao-eletrica"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 dark:text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
                 >
                   Manutenção Elétrica
                 </Link>
@@ -71,7 +71,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/servicos/manutencao-hidraulica"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 dark:text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
                 >
                   Manutenção Hidráulica
                 </Link>
@@ -79,7 +79,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/servicos/manutencao-eletronica"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 dark:text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
                 >
                   Manutenção Eletrônica
                 </Link>
@@ -92,17 +92,17 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Links Úteis</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-600 dark:text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors">
                   Início
                 </Link>
               </li>
               <li>
-                <Link href="/#servicos" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#servicos" className="text-gray-600 dark:text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors">
                   Serviços
                 </Link>
               </li>
               <li>
-                <Link href="/#contato" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#contato" className="text-gray-600 dark:text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors">
                   Contato
                 </Link>
               </li>
@@ -113,15 +113,15 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Contato</h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-gray-400">
+              <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <span>(61) 99274-3428</span>
               </li>
-              <li className="flex items-start gap-2 text-gray-400">
+              <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <span>Cnsousatec@gmail.com</span>
               </li>
-              <li className="flex items-start gap-2 text-gray-400">
+              <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <span>Brasília - DF</span>
               </li>
@@ -129,7 +129,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400 dark:text-gray-400">
           <p>&copy; {currentYear} Cnsousatec. Todos os direitos reservados.</p>
         </div>
       </div>

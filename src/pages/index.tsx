@@ -21,7 +21,7 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative bg-blue-600 py-20 md:py-32 overflow-hidden">
+        <section className="relative bg-blue-600 dark:bg-blue-900 py-20 md:py-32 overflow-hidden transition-colors duration-300">
           <div className="container mx-auto px-4 relative z-10">
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
@@ -32,7 +32,7 @@ export default function Home() {
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Manutenção Profissional para seu Negócio
               </h1>
-              <p className="text-xl md:text-2xl mb-10 text-blue-100">
+              <p className="text-xl md:text-2xl mb-10 text-blue-100 dark:text-blue-200">
                 Serviços especializados em elétrica, eletrônica e hidráulica no Distrito Federal
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -46,7 +46,7 @@ export default function Home() {
                 </a>
                 <Link
                   href="/#servicos"
-                  className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center justify-center"
+                  className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center justify-center"
                 >
                   Nossos Serviços
                 </Link>
