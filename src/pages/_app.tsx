@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { initGA, logPageView } from '@/lib/analytics';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
       storageKey="Cnsousatec-theme"
     >
       <Component {...pageProps} />
+      <SpeedInsights />
     </ThemeProvider>
   );
 }
