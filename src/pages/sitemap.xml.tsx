@@ -1,23 +1,7 @@
 import { GetServerSideProps } from 'next';
+import { localidades, servicos as servicosConfig } from '@/lib/localidades';
 
-const servicos = [
-  'manutencao-eletrica',
-  'manutencao-eletronica',
-  'manutencao-hidraulica',
-];
-
-const cidades = [
-  'brasilia',
-  'taguatinga',
-  'ceilandia',
-  'samambaia',
-  'aguas-claras',
-  'guara',
-  'sobradinho',
-  'planaltina',
-  'gama',
-  'santa-maria',
-];
+const servicos = Object.keys(servicosConfig);
 
 function generateSiteMap() {
   const baseUrl = 'https://www.Cnsousatec.com.br';
@@ -33,9 +17,9 @@ function generateSiteMap() {
   // URLs dinâmicas (páginas locais)
   const dynamicUrls = [];
   for (const servico of servicos) {
-    for (const cidade of cidades) {
+    for (const localidade of localidades) {
       dynamicUrls.push({
-        url: `/local/${servico}-${cidade}`,
+        url: `/local/${servico}-${localidade.slug}`,
         priority: '0.8',
       });
     }
