@@ -165,7 +165,7 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
                     className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:underline"
                   >
                     <Phone className="w-5 h-5" />
-                    Solicitar Atendimento em {cidadeNome}
+                    Solicitar Atendimento em {localidadeNome}
                   </a>
                 </div>
               </motion.div>
