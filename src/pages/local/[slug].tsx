@@ -84,8 +84,15 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Nossa empresa possui anos de experiência no mercado e conhece profundamente as necessidades dos moradores e empresários de {localidadeNome}. 
-                  Trabalhamos com agilidade, qualidade e preços justos, garantindo a satisfação total dos nossos clientes.
+                  {uf === 'DF' ? (
+                    <>
+                      Entendemos a sofisticação e as normas exigidas nos projetos de <strong>{localidadeNome}</strong>. Nossa equipe é especializada em manutenções que preservam a estética e a segurança de residências de alto padrão, garantindo conformidade total com as normas técnicas brasileiras.
+                    </>
+                  ) : (
+                    <>
+                      A CNSOUSATEC oferece o suporte técnico que <strong>{localidadeNome}</strong> precisa para crescer com segurança. Seja para uma emergência elétrica residencial ou para a instalação hidráulica do seu novo comércio, estamos prontos para atender com agilidade e o melhor custo-benefício da região.
+                    </>
+                  )}
                 </p>
 
                 <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
@@ -97,9 +104,9 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">Atendimento Local</h3>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        Equipe disponível para atendimento rápido em {localidadeNome} e região.
-                      </p>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Equipe disponível para atendimento rápido em {localidadeNome} e região. Foco de Atendimento: <strong>{foco}</strong>.
+                  </p>
                     </div>
                   </div>
 
@@ -145,9 +152,15 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Se você está em {localidadeNome} e precisa de {servicoNome}, não hesite em nos contatar. Estamos prontos para atender sua solicitação 
-                  com rapidez e eficiência. Nossa missão é garantir a segurança, o conforto e a tranquilidade dos nossos clientes através de 
-                  serviços de excelência.
+                  {uf === 'DF' ? (
+                    <>
+                      Em <strong>{localidadeNome}</strong>, a segurança e a conformidade são prioridades. Nossos técnicos possuem certificações NR-10 e CREA, essenciais para atuar em condomínios e empresas de alto padrão. Garantimos um serviço de excelência, focado na durabilidade e na tranquilidade do seu patrimônio.
+                    </>
+                  ) : (
+                    <>
+                      Se você está em <strong>{localidadeNome}</strong> e precisa de {servicoNome}, não hesite em nos contatar. Estamos prontos para atender sua solicitação com rapidez e eficiência. Nossa missão é garantir a segurança, o conforto e a tranquilidade dos nossos clientes através de serviços de excelência, com foco em soluções práticas e acessíveis.
+                    </>
+                  )}
                 </p>
 
                 <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-600 p-6 mt-8">
