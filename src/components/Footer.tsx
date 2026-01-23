@@ -14,7 +14,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <div className="relative w-8 h-8 overflow-hidden rounded-full border border-blue-600">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo-clean.png"
                   alt="Cnsousatec logo"
                   fill
                   className="object-cover"
