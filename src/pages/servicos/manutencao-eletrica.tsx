@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -7,15 +7,11 @@ import { Zap, CheckCircle, Phone, Shield, Clock, Award } from 'lucide-react';
 export default function ManutencaoEletrica() {
   return (
     <>
-      <Head>
-        <title>Manutenção Elétrica em Brasília - Cnsousatec | Empresas e Condomínios</title>
-        <meta
-          name="description"
-          content="Serviços especializados de manutenção elétrica em Brasília para empresas, condomínios e prédios comerciais. Instalações, reparos e manutenção preventiva com equipe qualificada."
-        />
-        <meta name="keywords" content="manutenção elétrica brasília, eletricista brasília, instalação elétrica, manutenção preventiva elétrica, reparo elétrico empresas" />
-        <link rel="canonical" href="https://www.Cnsousatec.com.br/servicos/manutencao-eletrica" />
-      </Head>
+      <SEO
+        title="Manutenção Elétrica em Brasília - Cnsousatec | Empresas e Condomínios"
+        description="Serviços especializados de manutenção elétrica em Brasília para empresas, condomínios e prédios comerciais. Instalações, reparos e manutenção preventiva com equipe qualificada."
+        canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletrica"
+      />
 
       <Header />
 

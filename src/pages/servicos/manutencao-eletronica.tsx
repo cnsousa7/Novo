@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -7,15 +7,11 @@ import { Cpu, CheckCircle, Phone, Wrench, Zap, Settings } from 'lucide-react';
 export default function ManutencaoEletronica() {
   return (
     <>
-      <Head>
-        <title>Manutenção Eletrônica em Brasília - Cnsousatec | Equipamentos e Sistemas</title>
-        <meta
-          name="description"
-          content="Serviços especializados de manutenção eletrônica em Brasília. Reparo de equipamentos, sistemas de automação, controle e instrumentação para empresas."
-        />
-        <meta name="keywords" content="manutenção eletrônica brasília, reparo equipamentos eletrônicos, automação industrial, manutenção sistemas eletrônicos" />
-        <link rel="canonical" href="https://www.Cnsousatec.com.br/servicos/manutencao-eletronica" />
-      </Head>
+      <SEO
+        title="Manutenção Eletrônica em Brasília - Cnsousatec | Equipamentos e Sistemas"
+        description="Serviços especializados de manutenção eletrônica em Brasília. Reparo de equipamentos, sistemas de automação, controle e instrumentação para empresas."
+        canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletronica"
+      />
 
       <Header />
 

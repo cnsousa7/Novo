@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -7,15 +7,11 @@ import { Wrench, CheckCircle, Phone, Droplet, Shield, Clock } from 'lucide-react
 export default function ManutencaoHidraulica() {
   return (
     <>
-      <Head>
-        <title>Manutenção Hidráulica em Brasília - Cnsousatec | Predial e Comercial</title>
-        <meta
-          name="description"
-          content="Serviços especializados de manutenção hidráulica em Brasília. Reparos, instalações e manutenção predial para empresas, condomínios e comércio no DF."
-        />
-        <meta name="keywords" content="manutenção hidráulica brasília, encanador brasília, reparo hidráulico, instalação hidráulica predial, vazamento água" />
-        <link rel="canonical" href="https://www.Cnsousatec.com.br/servicos/manutencao-hidraulica" />
-      </Head>
+      <SEO
+        title="Manutenção Hidráulica em Brasília - Cnsousatec | Predial e Comercial"
+        description="Serviços especializados de manutenção hidráulica em Brasília. Reparos, instalações e manutenção predial para empresas, condomínios e comércio no DF."
+        canonical="https://www.cnsousatec.com.br/servicos/manutencao-hidraulica"
+      />
 
       <Header />
 

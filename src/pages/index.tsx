@@ -7,16 +7,18 @@ import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
 import ServicesSection from '@/components/ServicesSection';
 import SchemaLocalBusiness from '@/components/SchemaLocalBusiness';
+import SEO from '@/components/SEO';
 
 const fastTransition = { duration: 0.3, ease: "easeOut" as const };
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Head>
-        <title>Cnsousatec - Manutenção Elétrica, Eletrônica e Hidráulica no DF</title>
-        <meta name="description" content="Serviços especializados de manutenção elétrica, eletrônica e hidráulica para empresas, condomínios e residências em todo o Distrito Federal." />
-      </Head>
+      <SEO
+        title="Cnsousatec - Manutenção Elétrica, Eletrônica e Hidráulica no DF"
+        description="Serviços especializados de manutenção elétrica, eletrônica e hidráulica para empresas, condomínios e residências em todo o Distrito Federal."
+        canonical="https://www.cnsousatec.com.br"
+      />
 
       <SchemaLocalBusiness />
       <Header />

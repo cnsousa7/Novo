@@ -4,7 +4,7 @@ import { localidades, servicos as servicosConfig } from '@/lib/localidades';
 const servicos = Object.keys(servicosConfig);
 
 function generateSiteMap() {
-  const baseUrl = 'https://www.Cnsousatec.com.br';
+  const baseUrl = 'https://www.cnsousatec.com.br';
   
   // URLs estáticas
   const staticUrls = [
