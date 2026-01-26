@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Zap, Shield, Clock, ArrowRight, CheckCircle2, Phone, Mail, MapPin } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Testimonials from '@/components/Testimonials';
 import SchemaLocalBusiness from '@/components/SchemaLocalBusiness';
 
 const fastTransition = { duration: 0.3, ease: "easeOut" as const };
@@ -160,6 +161,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Testimonials uf="DF" />
 
         {/* Contact Section */}
         <section id="contato" className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800/50 transition-colors duration-300 relative overflow-hidden">

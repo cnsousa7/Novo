@@ -3,6 +3,7 @@ import { localidades, servicos, getLocalidadeBySlug } from '@/lib/localidades';
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Testimonials from '@/components/Testimonials';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, CheckCircle } from 'lucide-react';
 
@@ -11,7 +12,7 @@ interface LocalPageProps {
   servicoNome: string;
   localidade: string;
   localidadeNome: string;
-  uf: string;
+  uf: 'DF' | 'GO';
   foco: string;
   whatsappMsg: string;
   title: string;
@@ -185,6 +186,8 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
             </div>
           </div>
         </section>
+
+        <Testimonials uf={uf} />
 
         {/* CTA Section */}
         <section className="bg-blue-600 text-white py-16">
