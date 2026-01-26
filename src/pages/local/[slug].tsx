@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
+import ServicesSection from '@/components/ServicesSection';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, CheckCircle } from 'lucide-react';
 
@@ -187,6 +188,7 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
           </div>
         </section>
 
+        <ServicesSection uf={uf} />
         <Testimonials uf={uf} />
 
         {/* CTA Section */}

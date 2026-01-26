@@ -5,6 +5,7 @@ import { Zap, Shield, Clock, ArrowRight, CheckCircle2, Phone, Mail, MapPin } fro
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
+import ServicesSection from '@/components/ServicesSection';
 import SchemaLocalBusiness from '@/components/SchemaLocalBusiness';
 
 const fastTransition = { duration: 0.3, ease: "easeOut" as const };
@@ -60,68 +61,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section id="servicos" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Nossos Serviços</h2>
-              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Soluções completas em manutenção para empresas, condomínios e residências
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Manutenção Elétrica",
-                  desc: "Instalações, reparos e manutenção preventiva em sistemas elétricos para empresas e condomínios.",
-                  icon: <Zap className="w-8 h-8 text-blue-600" />,
-                  link: "/servicos/manutencao-eletrica",
-                  image: "/images/eletrica.jpg"
-                },
-                {
-                  title: "Manutenção Hidráulica",
-                  desc: "Serviços completos em sistemas hidráulicos, tubulações e instalações prediais.",
-                  icon: <Clock className="w-8 h-8 text-cyan-600" />,
-                  link: "/servicos/manutencao-hidraulica",
-                  image: "/images/hidraulica.jpg"
-                },
-                {
-                  title: "Manutenção Eletrônica",
-                  desc: "Reparo e manutenção de equipamentos eletrônicos, sistemas de automação e controle.",
-                  icon: <Shield className="w-8 h-8 text-purple-600" />,
-                  link: "/servicos/manutencao-eletronica",
-                  image: "/images/eletronica.jpg"
-                }
-              ].map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-100 dark:border-gray-700 overflow-hidden"
-                >
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <div className="mb-6">{service.icon}</div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{service.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">{service.desc}</p>
-                    <Link href={service.link} className="text-blue-600 dark:text-blue-400 font-semibold inline-flex items-center gap-2 hover:underline">
-                      Saiba mais <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServicesSection uf="DF" />
 
         {/* Why Choose Us */}
         <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
