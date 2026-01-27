@@ -1,5 +1,6 @@
 import SEO from '@/components/SEO';
 import Header from '@/components/Header';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Zap, CheckCircle, Phone, Shield, Clock, Award } from 'lucide-react';
@@ -16,6 +17,9 @@ export default function ManutencaoEletrica() {
       <Header />
 
       <main>
+        <div className="container mx-auto px-4">
+          <Breadcrumbs items={[{ label: 'Manutenção Elétrica', href: '/servicos/manutencao-eletrica' }]} />
+        </div>
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-600 to-blue-800 dark:from-blue-900 dark:to-blue-950 text-white py-16 transition-colors duration-300">
           <div className="container mx-auto px-4">

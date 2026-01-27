@@ -7,6 +7,8 @@ import Testimonials from '@/components/Testimonials';
 import ServicesSection from '@/components/ServicesSection';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, CheckCircle } from 'lucide-react';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import SEO from '@/components/SEO';
 
 interface LocalPageProps {
   servico: string;
@@ -25,16 +27,24 @@ interface LocalPageProps {
 export default function LocalPage({ servico, servicoNome, localidade, localidadeNome, uf, foco, whatsappMsg, title, description }: LocalPageProps) {
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={`${servicoNome} ${localidadeNome}, ${servico} ${localidade}, serviços ${localidadeNome}`} />
-        <link rel="canonical" href={`https://www.Cnsousatec.com.br/local/${servico}-${localidade}`} />
-      </Head>
+      <SEO
+        title={title}
+        description={description}
+        canonical={`https://www.cnsousatec.com.br/local/${servico}-${localidade}`}
+      />
 
       <Header />
 
       <main>
+        <div className="container mx-auto px-4">
+          <Breadcrumbs 
+            items={[
+              { label: servicoNome, href: `/servicos/${servico}` },
+              { label: localidadeNome, href: `/local/${servico}-${localidade}` }
+            ]} 
+          />
+        </div>
+
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
           <div className="container mx-auto px-4">
@@ -272,8 +282,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { nome: localidadeNome, uf, foco, whatsappMsg } = localidadeData;
 
-  const title = `${servicoNome} em ${localidadeNome} - Cnsousatec | Atendimento Rápido`;
-  const description = `Serviços de ${servicoNome} em ${localidadeNome} - ${uf}. Atendimento profissional para residências, empresas e condomínios. Foco: ${foco}. Orçamento grátis!`;
+  const title = `${servicoNome} em ${localidadeNome} ${uf} - Orçamento Grátis 24h`;
+  const description = `⚡ Precisando de ${servicoNome} em ${localidadeNome} ${uf}? Atendimento rápido 24h para residências e empresas. Profissionais qualificados e garantia. Ligue agora!`;
 
   return {
     props: {
