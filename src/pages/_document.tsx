@@ -7,9 +7,13 @@ export default function Document() {
       <Head>
         {/* Favicon and app icons */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logo-clean.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#2563eb" />
+        
+        {/* Google Site Verification (Optional but recommended) */}
+        <meta name="google-site-verification" content="verification_token_here" />
         
         {/* Logo for social media */}
         <meta property="og:image" content="/logo-clean.png" />

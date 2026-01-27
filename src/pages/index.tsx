@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Cnsousatec - Manutenção Elétrica, Eletrônica e Hidráulica no DF"
-        description="Serviços especializados de manutenção elétrica, eletrônica e hidráulica para empresas, condomínios e residências em todo o Distrito Federal."
+        title="Cnsousatec - Manutenção Elétrica, Eletrônica e Hidráulica 24h no DF"
+        description="⚡ Precisando de Manutenção? Atendimento Rápido 24h em Brasília e DF. Elétrica, Eletrônica e Hidráulica para Empresas e Residências. Orçamento Grátis!"
         canonical="https://www.cnsousatec.com.br"
       />
 

@@ -8,8 +8,8 @@ export default function ManutencaoHidraulica() {
   return (
     <>
       <SEO
-        title="Manutenção Hidráulica em Brasília - Cnsousatec | Predial e Comercial"
-        description="Serviços especializados de manutenção hidráulica em Brasília. Reparos, instalações e manutenção predial para empresas, condomínios e comércio no DF."
+        title="Encanador 24h em Brasília DF - Manutenção Hidráulica e Vazamentos"
+        description="💧 Encanador de Emergência 24h em Brasília. Caça Vazamentos, Reparos Hidráulicos e Manutenção Predial. Atendimento Rápido e Preço Justo. Ligue Já!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-hidraulica"
       />
 

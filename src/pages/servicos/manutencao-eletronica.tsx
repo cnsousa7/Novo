@@ -8,8 +8,8 @@ export default function ManutencaoEletronica() {
   return (
     <>
       <SEO
-        title="Manutenção Eletrônica em Brasília - Cnsousatec | Equipamentos e Sistemas"
-        description="Serviços especializados de manutenção eletrônica em Brasília. Reparo de equipamentos, sistemas de automação, controle e instrumentação para empresas."
+        title="Manutenção Eletrônica em Brasília DF - Reparo Especializado"
+        description="Conserto de Placas e Equipamentos Eletrônicos em Brasília. Manutenção de Sistemas de Automação e Controle. Orçamento Rápido e Garantia Técnica. Confira!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletronica"
       />
 

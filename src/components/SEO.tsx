@@ -18,7 +18,12 @@ export default function SEO({
   noindex = false,
 }: SEOProps) {
   const siteName = 'Cnsousatec';
-  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  // Título otimizado para CTR: Adiciona "Orçamento Grátis" ou "DF" se não houver
+  const optimizedTitle = title.includes('DF') || title.includes('Brasília') 
+    ? title 
+    : `${title} em Brasília DF | Orçamento Grátis`;
+    
+  const fullTitle = optimizedTitle.includes(siteName) ? optimizedTitle : `${optimizedTitle} | ${siteName}`;
   const baseUrl = 'https://www.cnsousatec.com.br';
   const canonicalUrl = canonical || baseUrl;
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
@@ -29,6 +34,12 @@ export default function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {noindex && <meta name="robots" content="noindex,nofollow" />}
+      
+      {/* Favicon and Logo for Google Search */}
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" href="/logo-clean.png" type="image/png" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="shortcut icon" href="/favicon.ico" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
@@ -51,11 +62,16 @@ export default function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullOgImage} />
       
+      {/* Phone number for mobile click-to-call optimization */}
+      <meta name="format-detection" content="telephone=yes" />
+      
       {/* Additional Meta Tags */}
       <meta name="author" content="Cnsousatec" />
       <meta name="language" content="pt-BR" />
       <meta name="geo.region" content="BR-DF" />
       <meta name="geo.placename" content="Brasília" />
+      <meta name="geo.position" content="-15.7939;-47.8828" />
+      <meta name="ICBM" content="-15.7939, -47.8828" />
     </Head>
   );
 }

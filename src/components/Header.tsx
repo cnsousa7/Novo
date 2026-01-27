@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react';
+import { Moon, Sun, Menu, X, ChevronDown, Phone } from 'lucide-react';
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
@@ -21,6 +21,7 @@ export default function Header() {
   };
 
   const whatsappUrl = "https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec.";
+  const phoneUrl = "tel:+5561992743428";
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300">
@@ -89,6 +90,12 @@ export default function Header() {
             </button>
 
             <a
+              href={phoneUrl}
+              className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold border-2 border-blue-600 dark:border-blue-400 px-4 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors"
+            >
+              <Phone className="w-4 h-4" /> (61) 99274-3428
+            </a>
+            <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -141,10 +148,17 @@ export default function Header() {
               Contato
             </Link>
             <a
+              href={phoneUrl}
+              className="flex items-center justify-center gap-2 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 border-2 border-blue-600 dark:border-blue-400 px-6 py-3 rounded-lg font-bold text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Phone className="w-5 h-5" /> Ligar Agora
+            </a>
+            <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold text-center"
+              className="block bg-blue-600 text-white px-6 py-3 rounded-lg font-bold text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Orçamento WhatsApp

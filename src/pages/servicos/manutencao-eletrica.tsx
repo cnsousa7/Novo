@@ -8,8 +8,8 @@ export default function ManutencaoEletrica() {
   return (
     <>
       <SEO
-        title="Manutenção Elétrica em Brasília - Cnsousatec | Empresas e Condomínios"
-        description="Serviços especializados de manutenção elétrica em Brasília para empresas, condomínios e prédios comerciais. Instalações, reparos e manutenção preventiva com equipe qualificada."
+        title="Eletricista 24h em Brasília DF - Manutenção Elétrica Urgente"
+        description="⚡ Eletricista de Emergência 24h em Brasília. Reparos Elétricos, Curto-Circuito e Instalações. Atendimento Imediato para Empresas e Condomínios. Ligue Agora!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletrica"
       />
 
