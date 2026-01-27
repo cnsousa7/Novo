@@ -7,8 +7,12 @@ const baseUrl = 'https://www.cnsousatec.com.br';
 // Localidades e serviços (simplificado - você pode importar do arquivo real)
 const servicos = ['manutencao-eletrica', 'manutencao-eletronica', 'manutencao-hidraulica'];
 const localidades = [
-  'brasilia', 'taguatinga', 'ceilandia', 'samambaia', 'planaltina',
-  'aguas-claras', 'gama', 'santa-maria', 'recanto-das-emas', 'sobradinho'
+  'asa-sul', 'asa-norte', 'sudoeste', 'noroeste', 'lago-sul', 'lago-norte',
+  'aguas-claras', 'guara', 'taguatinga', 'vicente-pires',
+  'jardim-brasilia', 'mansoes-centro', 'mansoes-odisseia', 'perola',
+  'jardim-barragem', 'jardim-querencia', 'jardim-paraiso', 'jardim-america',
+  'setor-01', 'setor-02', 'setor-03', 'setor-04', 'setor-05', 'setor-08',
+  'santa-lucia', 'parque-da-barragem'
 ];
 
 // URLs estáticas

@@ -21,14 +21,22 @@ export const localidades: Localidade[] = [
   { slug: 'vicente-pires', nome: 'Vicente Pires', uf: 'DF', regiao: 'Brasília', foco: 'Casas', whatsappMsg: 'Orçamento Vicente Pires' },
   
   // Bairros de Águas Lindas de Goiás - GO
-  { slug: 'jardim-brasilia', nome: 'Jardim Brasília', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Residencial + comércios', whatsappMsg: 'Orçamento Jardim Brasília' },
-  { slug: 'mansoes-centro', nome: 'Mansões Centro', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Elétrica e hidráulica', whatsappMsg: 'Orçamento Mansões Centro' },
-  { slug: 'mansoes-odisseia', nome: 'Mansões Odisséia', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Manutenção técnica', whatsappMsg: 'Orçamento Mansões Odisséia' },
-  { slug: 'perola', nome: 'Pérola', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Emergência 24h', whatsappMsg: 'Orçamento Pérola' },
-  { slug: 'jardim-barragem', nome: 'Jardim Barragem', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Residencial', whatsappMsg: 'Orçamento Jardim Barragem' },
-  { slug: 'jardim-querencia', nome: 'Jardim Querência', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Casas e prédios', whatsappMsg: 'Orçamento Jardim Querência' },
-  { slug: 'jardim-paraiso', nome: 'Jardim Paraíso', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Serviços gerais', whatsappMsg: 'Orçamento Jardim Paraíso' },
-  { slug: 'jardim-america', nome: 'Jardim América', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Manutenção elétrica', whatsappMsg: 'Orçamento Jardim América' },
+  { slug: 'jardim-brasilia', nome: 'Jardim Brasília', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Residencial e Comercial', whatsappMsg: 'Orçamento em Jardim Brasília - Águas Lindas' },
+  { slug: 'mansoes-centro', nome: 'Mansões Centro', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Elétrica e Hidráulica', whatsappMsg: 'Orçamento em Mansões Centro - Águas Lindas' },
+  { slug: 'mansoes-odisseia', nome: 'Mansões Odisséia', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Manutenção Técnica 24h', whatsappMsg: 'Orçamento em Mansões Odisséia - Águas Lindas' },
+  { slug: 'perola', nome: 'Pérola', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Emergência Elétrica e Hidráulica', whatsappMsg: 'Orçamento em Pérola - Águas Lindas' },
+  { slug: 'jardim-barragem', nome: 'Jardim Barragem', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Residencial e Predial', whatsappMsg: 'Orçamento em Jardim Barragem - Águas Lindas' },
+  { slug: 'jardim-querencia', nome: 'Jardim Querência', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Casas e Comércios', whatsappMsg: 'Orçamento em Jardim Querência - Águas Lindas' },
+  { slug: 'jardim-paraiso', nome: 'Jardim Paraíso', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Serviços de Manutenção 24h', whatsappMsg: 'Orçamento em Jardim Paraíso - Águas Lindas' },
+  { slug: 'jardim-america', nome: 'Jardim América', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Manutenção Elétrica e Eletrônica', whatsappMsg: 'Orçamento em Jardim América - Águas Lindas' },
+  { slug: 'setor-01', nome: 'Setor 01', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Comercial e Residencial', whatsappMsg: 'Orçamento em Setor 01 - Águas Lindas' },
+  { slug: 'setor-02', nome: 'Setor 02', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Manutenção Geral', whatsappMsg: 'Orçamento em Setor 02 - Águas Lindas' },
+  { slug: 'setor-03', nome: 'Setor 03', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Reparos Urgentes', whatsappMsg: 'Orçamento em Setor 03 - Águas Lindas' },
+  { slug: 'setor-04', nome: 'Setor 04', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Elétrica e Hidráulica', whatsappMsg: 'Orçamento em Setor 04 - Águas Lindas' },
+  { slug: 'setor-05', nome: 'Setor 05', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Atendimento 24h', whatsappMsg: 'Orçamento em Setor 05 - Águas Lindas' },
+  { slug: 'setor-08', nome: 'Setor 08', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Residencial', whatsappMsg: 'Orçamento em Setor 08 - Águas Lindas' },
+  { slug: 'santa-lucia', nome: 'Santa Lúcia', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Manutenção Predial', whatsappMsg: 'Orçamento em Santa Lúcia - Águas Lindas' },
+  { slug: 'parque-da-barragem', nome: 'Parque da Barragem', uf: 'GO', regiao: 'Águas Lindas de Goiás', foco: 'Reparos e Instalações', whatsappMsg: 'Orçamento em Parque da Barragem - Águas Lindas' },
 ];
 
 export const servicos = {

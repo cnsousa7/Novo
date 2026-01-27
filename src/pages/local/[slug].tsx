@@ -102,7 +102,7 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
                     </>
                   ) : (
                     <>
-                      A CNSOUSATEC oferece o suporte técnico que <strong>{localidadeNome}</strong> precisa para crescer com segurança. Seja para uma emergência elétrica residencial ou para a instalação hidráulica do seu novo comércio, estamos prontos para atender com agilidade e o melhor custo-benefício da região.
+                      A <strong>Cnsousatec</strong> oferece o suporte técnico especializado que <strong>{localidadeNome}</strong> e toda a região de <strong>Águas Lindas de Goiás</strong> precisam. Seja para uma emergência elétrica 24h, reparo eletrônico ou instalação hidráulica, nossa equipe está pronta para atender com rapidez, segurança e o melhor custo-benefício de GO.
                     </>
                   )}
                 </p>
