@@ -9,8 +9,8 @@ export default function ManutencaoHidraulica() {
   return (
     <>
       <SEO
-        title="Encanador 24h em Brasília DF - Manutenção Hidráulica e Vazamentos"
-        description="💧 Encanador de Emergência 24h em Brasília. Caça Vazamentos, Reparos Hidráulicos e Manutenção Predial. Atendimento Rápido e Preço Justo. Ligue Já!"
+               title="Manutenção Hidráulica 24h | CNSOUSATEC ® Brasília e Entorno"
+        description="💧 CNSOUSATEC: Encanador de Emergência 24h em Brasília e Águas Lindas. Caça Vazamentos, Reparos Hidráulicos e Manutenção Predial. Qualidade CNSOUSATEC. Ligue Já!""
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-hidraulica"
       />
 

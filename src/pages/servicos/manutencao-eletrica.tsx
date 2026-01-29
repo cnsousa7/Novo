@@ -9,8 +9,8 @@ export default function ManutencaoEletrica() {
   return (
     <>
       <SEO
-        title="Eletricista 24h em Brasília DF - Manutenção Elétrica Urgente"
-        description="⚡ Eletricista de Emergência 24h em Brasília. Reparos Elétricos, Curto-Circuito e Instalações. Atendimento Imediato para Empresas e Condomínios. Ligue Agora!"
+         title="Manutenção Elétrica 24h | CNSOUSATEC ® Brasília e Entorno"
+        description="⚡ CNSOUSATEC: Eletricista de Emergência 24h em Brasília e Águas Lindas. Reparos Elétricos, Curto-Circuito e Instalações. Qualidade CNSOUSATEC. Ligue Agora!"!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletrica"
       />
 

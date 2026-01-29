@@ -3,8 +3,8 @@ export default function SchemaLocalBusiness() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': 'https://www.cnsousatec.com.br',
-    name: 'Cnsousatec - Manutenção Elétrica, Eletrônica e Hidráulica',
-    alternateName: 'CNSOUSATEC',
+    name: 'CNSOUSATEC - Manutenção Elétrica, Eletrônica e Hidráulica',
+    alternateName: ['Cnsousatec', 'CNSOUSATEC Brasília', 'CNSOUSATEC Águas Lindas', 'CNSOUSATEC Manutenção'],
     description: 'Serviços especializados de manutenção elétrica, eletrônica e hidráulica 24h em Brasília e todo o Distrito Federal. Atendimento rápido para empresas e residências.',
     url: 'https://www.cnsousatec.com.br',
     telephone: '+5561992743428',
@@ -35,7 +35,10 @@ export default function SchemaLocalBusiness() {
       { '@type': 'City', name: 'Vicente Pires' },
       { '@type': 'City', name: 'Sudoeste' },
       { '@type': 'City', name: 'Asa Norte' },
-      { '@type': 'City', name: 'Asa Sul' }
+      { '@type': 'City', name: 'Asa Sul' },
+      { '@type': 'City', name: 'Águas Lindas de Goiás' },
+      { '@type': 'City', name: 'Jardim Brasília' },
+      { '@type': 'City', name: 'Mansões Centro' }
     ],
     priceRange: '$$',
     openingHoursSpecification: [

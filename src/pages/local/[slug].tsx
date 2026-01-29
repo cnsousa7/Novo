@@ -282,8 +282,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { nome: localidadeNome, uf, foco, whatsappMsg } = localidadeData;
 
-  const title = `${servicoNome} em ${localidadeNome} ${uf} - Orçamento Grátis 24h`;
-  const description = `⚡ Precisando de ${servicoNome} em ${localidadeNome} ${uf}? Atendimento rápido 24h para residências e empresas. Profissionais qualificados e garantia. Ligue agora!`;
+  const title = `${servicoNome} em ${localidadeNome} ${uf} | CNSOUSATEC ®`;
+  const description = `⚡ CNSOUSATEC: Especialista em ${servicoNome} em ${localidadeNome} ${uf}. Atendimento 24h urgente para residências e empresas. Qualidade garantida pela CNSOUSATEC. Ligue agora!`;
 
   return {
     props: {
