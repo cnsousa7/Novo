@@ -1,5 +1,6 @@
 import SEO from '@/components/SEO';
 import Header from '@/components/Header';
+import ServiceSchema from '@/components/ServiceSchema';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -9,9 +10,15 @@ export default function ManutencaoHidraulica() {
   return (
     <>
       <SEO
-               title="Manutenção Hidráulica 24h | CNSOUSATEC ® Brasília e Entorno"
-        description="💧 CNSOUSATEC: Encanador de Emergência 24h em Brasília e Águas Lindas. Caça Vazamentos, Reparos Hidráulicos e Manutenção Predial. Qualidade CNSOUSATEC. Ligue Já!""
+        title="Encanador 24h Brasília | CNSOUSATEC ® Hidráulica Urgente"
+        description="💧 Precisa de Encanador em Brasília? A CNSOUSATEC ® oferece atendimento 24h para Caça Vazamentos, Reparos Hidráulicos, Desentupimento e Manutenção Predial. Orçamento Grátis. Ligue Agora!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-hidraulica"
+      />
+      <ServiceSchema 
+        name="Encanador 24h Brasília"
+        description="Serviços de encanador de emergência, caça vazamentos, desentupimento e manutenção hidráulica predial em Brasília."
+        serviceType="Plumbing Service"
+        areaServed={['Brasília', 'Taguatinga', 'Águas Claras', 'Guará', 'Sudoeste', 'Asa Norte', 'Asa Sul']}
       />
 
       <Header />
@@ -32,11 +39,11 @@ export default function ManutencaoHidraulica() {
               <div className="bg-cyan-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Wrench className="w-10 h-10" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Manutenção Hidráulica Profissional em Brasília
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Encanador 24h em Brasília
               </h1>
-              <p className="text-xl text-cyan-100 mb-8">
-                Serviços completos em sistemas hidráulicos, tubulações e instalações prediais para empresas e condomínios no Distrito Federal
+              <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+                A <strong>CNSOUSATEC ®</strong> é especialista em serviços hidráulicos urgentes e caça vazamentos. Atendemos todo o DF com rapidez e garantia técnica.
               </p>
               <a
                 href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica com a Cnsousatec."
@@ -66,7 +73,7 @@ export default function ManutencaoHidraulica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A <strong>Cnsousatec</strong> é referência em serviços de manutenção hidráulica no Distrito Federal, oferecendo soluções completas para empresas, condomínios, prédios comerciais e estabelecimentos de diversos segmentos. Nossa equipe de profissionais qualificados está preparada para atender desde pequenos reparos até grandes projetos de instalação e reforma de sistemas hidráulicos.
+                  A <strong>CNSOUSATEC ®</strong> é referência em serviços de manutenção hidráulica no Distrito Federal, oferecendo soluções completas para empresas, condomínios, prédios comerciais e estabelecimentos de diversos segmentos. Nossa equipe de profissionais qualificados está preparada para atender desde pequenos reparos até grandes projetos de instalação e reforma de sistemas hidráulicos.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -140,11 +147,11 @@ export default function ManutencaoHidraulica() {
                 </div>
 
                 <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
-                  Por Que Escolher a Cnsousatec?
+                  Por Que Escolher a CNSOUSATEC ®?
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A escolha de um prestador de serviços hidráulicos de confiança é fundamental para garantir a qualidade do trabalho e evitar problemas futuros. A Cnsousatec se destaca no mercado por oferecer um serviço completo, desde o diagnóstico até a execução e o pós-venda, sempre com foco na satisfação do cliente.
+                  A escolha de um prestador de serviços hidráulicos de confiança é fundamental para garantir a qualidade do trabalho e evitar problemas futuros. A <strong>CNSOUSATEC ®</strong> se destaca no mercado por oferecer um serviço completo, desde o diagnóstico até a execução e o pós-venda, sempre com foco na satisfação do cliente.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -178,7 +185,7 @@ export default function ManutencaoHidraulica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A manutenção hidráulica predial é essencial para garantir o bom funcionamento das instalações de água e esgoto em edifícios comerciais, condomínios e empresas. Problemas como vazamentos, entupimentos e baixa pressão de água podem afetar o conforto dos usuários e causar danos à estrutura do imóvel. A Cnsousatec oferece planos de manutenção preventiva que incluem inspeções periódicas, limpeza de caixas d'água, verificação de bombas e registros, e identificação precoce de problemas.
+                  A manutenção hidráulica predial é essencial para garantir o bom funcionamento das instalações de água e esgoto em edifícios comerciais, condomínios e empresas. Problemas como vazamentos, entupimentos e baixa pressão de água podem afetar o conforto dos usuários e causar danos à estrutura do imóvel. A <strong>CNSOUSATEC ®</strong> oferece planos de manutenção preventiva que incluem inspeções periódicas, limpeza de caixas d'água, verificação de bombas e registros, e identificação precoce de problemas.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -190,35 +197,11 @@ export default function ManutencaoHidraulica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Vazamentos ocultos são um dos principais vilões do desperdício de água e podem causar danos estruturais graves se não forem detectados a tempo. A Cnsousatec utiliza equipamentos de última geração para detecção de vazamentos, incluindo geofones eletrônicos, correlacionadores de ruído e câmeras termográficas. Essas tecnologias permitem identificar vazamentos em tubulações enterradas, embutidas em paredes ou sob pisos, sem a necessidade de quebras desnecessárias.
+                  Vazamentos ocultos são um dos principais vilões do desperdício de água e podem causar danos estruturais graves se não forem detectados a tempo. A <strong>CNSOUSATEC ®</strong> utiliza equipamentos de última geração para detecção de vazamentos, incluindo geofones eletrônicos, correlacionadores de ruído e câmeras termográficas. Essas tecnologias permitem identificar vazamentos em tubulações enterradas, embutidas em paredes ou sob pisos, sem a necessidade de quebras desnecessárias.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                   Após a detecção precisa do vazamento, nossa equipe realiza o reparo com técnicas modernas e minimamente invasivas, restaurando a integridade do sistema hidráulico e evitando desperdícios. Esse serviço é especialmente importante para condomínios e empresas que desejam reduzir custos com água e preservar o meio ambiente.
-                </p>
-
-                <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
-                  Desentupimento Profissional
-                </h2>
-
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Entupimentos são problemas comuns em sistemas hidráulicos e podem ocorrer por diversos motivos, como acúmulo de resíduos, gordura, objetos estranhos ou raízes de árvores nas tubulações. A Cnsousatec oferece serviços de desentupimento profissional utilizando equipamentos especializados como hidrojateamento de alta pressão, máquinas rotativas e sondas flexíveis.
-                </p>
-
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Atendemos desentupimentos de pias, ralos, vasos sanitários, colunas de esgoto, caixas de gordura e redes coletoras. Nosso serviço é rápido, eficiente e limpo, garantindo a desobstrução completa do sistema e o retorno imediato ao funcionamento normal. Além disso, oferecemos orientações sobre boas práticas para evitar novos entupimentos.
-                </p>
-
-                <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
-                  Atendimento em Todo o Distrito Federal
-                </h2>
-
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A Cnsousatec atende todas as regiões administrativas do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e demais localidades. Contamos com equipes móveis equipadas com ferramentas e materiais, permitindo atendimento rápido e eficiente em qualquer região.
-                </p>
-
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Se você precisa de manutenção hidráulica confiável e de qualidade, entre em contato conosco. Oferecemos orçamentos sem compromisso e estamos prontos para atender suas necessidades com profissionalismo, pontualidade e preços justos. Nossa missão é garantir o perfeito funcionamento dos sistemas hidráulicos, contribuindo para o conforto e a segurança dos nossos clientes.
                 </p>
               </motion.div>
             </div>

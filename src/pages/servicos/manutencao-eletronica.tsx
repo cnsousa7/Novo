@@ -1,5 +1,6 @@
 import SEO from '@/components/SEO';
 import Header from '@/components/Header';
+import ServiceSchema from '@/components/ServiceSchema';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -9,9 +10,15 @@ export default function ManutencaoEletronica() {
   return (
     <>
       <SEO
-           title="Manutenção Eletrônica | CNSOUSATEC ® Conserto de Placas"
-        description="🛠️ CNSOUSATEC: Conserto de Placas e Equipamentos Eletrônicos em Brasília e Região. Manutenção de Sistemas de Automação. Qualidade Técnica CNSOUSATEC. Confira!"!"
+        title="Manutenção Eletrônica Brasília | CNSOUSATEC ® Conserto de Placas"
+        description="🛠️ CNSOUSATEC: Conserto de Placas e Equipamentos Eletrônicos em Brasília e Região. Manutenção de Sistemas de Automação e Controle. Qualidade Técnica Garantida. Confira!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletronica"
+      />
+      <ServiceSchema 
+        name="Manutenção Eletrônica Brasília"
+        description="Conserto de placas eletrônicas, manutenção de equipamentos industriais e sistemas de automação em Brasília e DF."
+        serviceType="Electronics Repair"
+        areaServed={['Brasília', 'Taguatinga', 'Águas Claras', 'Guará', 'Sudoeste', 'Asa Norte', 'Asa Sul']}
       />
 
       <Header />
