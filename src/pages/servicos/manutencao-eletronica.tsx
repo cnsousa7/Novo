@@ -10,15 +10,15 @@ export default function ManutencaoEletronica() {
   return (
     <>
       <SEO
-        title="Manutenção Eletrônica Brasília | CNSOUSATEC ® Conserto de Placas"
-        description="🛠️ CNSOUSATEC: Conserto de Placas e Equipamentos Eletrônicos em Brasília e Região. Manutenção de Sistemas de Automação e Controle. Qualidade Técnica Garantida. Confira!"
+        title="Manutenção Eletrônica Brasília e Águas Lindas | CNSOUSATEC ®"
+        description="🛠️ CNSOUSATEC: Conserto de Placas e Equipamentos Eletrônicos em Brasília e Águas Lindas de Goiás. Manutenção de Sistemas de Automação e Controle. Confira!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletronica"
       />
       <ServiceSchema 
-        name="Manutenção Eletrônica Brasília"
-        description="Conserto de placas eletrônicas, manutenção de equipamentos industriais e sistemas de automação em Brasília e DF."
+        name="Manutenção Eletrônica Brasília e Águas Lindas"
+        description="Conserto de placas eletrônicas e manutenção de equipamentos em Brasília, Águas Lindas de Goiás e todo o Entorno."
         serviceType="Electronics Repair"
-        areaServed={['Brasília', 'Taguatinga', 'Águas Claras', 'Guará', 'Sudoeste', 'Asa Norte', 'Asa Sul']}
+        areaServed={['Brasília', 'Taguatinga', 'Águas Claras', 'Guará', 'Sudoeste', 'Asa Norte', 'Asa Sul', 'Águas Lindas de Goiás', 'Jardim Brasília', 'Mansões Centro']}
       />
 
       <Header />
@@ -40,10 +40,10 @@ export default function ManutencaoEletronica() {
                 <Cpu className="w-10 h-10" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Manutenção Eletrônica Especializada em Brasília
+                Manutenção Eletrônica em Brasília e Águas Lindas
               </h1>
-              <p className="text-xl text-purple-100 mb-8">
-                Reparo e manutenção de equipamentos eletrônicos, sistemas de automação e controle industrial no Distrito Federal
+              <p className="text-xl text-blue-100 mb-8">
+                Conserto de placas e equipamentos em Brasília, Águas Lindas de Goiás e todo o Entorno para empresas e condomínios.
               </p>
               <a
                 href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção eletrônica com a Cnsousatec."

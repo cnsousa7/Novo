@@ -10,15 +10,15 @@ export default function ManutencaoEletrica() {
   return (
     <>
       <SEO
-        title="Eletricista 24h Brasília | CNSOUSATEC ® Elétrica Urgente"
-        description="⚡ Precisa de Eletricista em Brasília? A CNSOUSATEC ® oferece atendimento 24h para Curto-Circuito, Instalações, Quadros de Energia e Manutenção Predial. Orçamento Grátis e Atendimento Imediato. Ligue Agora!"
+        title="Eletricista 24h Brasília e Águas Lindas | CNSOUSATEC ®"
+        description="⚡ Precisa de Eletricista em Brasília ou Águas Lindas de Goiás? A CNSOUSATEC ® oferece atendimento 24h para Curto-Circuito, Instalações e Manutenção. Orçamento Grátis em todo o DF e Entorno. Ligue Agora!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletrica"
       />
       <ServiceSchema 
-        name="Eletricista 24h Brasília"
-        description="Serviços elétricos de emergência, curto-circuito, instalação de quadros e manutenção predial em todo o DF."
+        name="Eletricista 24h Brasília e Águas Lindas"
+        description="Serviços elétricos de emergência, curto-circuito e manutenção predial em Brasília, Águas Lindas de Goiás e todo o DF e Entorno."
         serviceType="Electrical Engineering"
-        areaServed={['Brasília', 'Taguatinga', 'Águas Claras', 'Guará', 'Sudoeste', 'Asa Norte', 'Asa Sul']}
+        areaServed={['Brasília', 'Taguatinga', 'Águas Claras', 'Guará', 'Sudoeste', 'Asa Norte', 'Asa Sul', 'Águas Lindas de Goiás', 'Jardim Brasília', 'Mansões Centro']}
       />
 
       <Header />
@@ -40,10 +40,10 @@ export default function ManutencaoEletrica() {
                 <Zap className="w-10 h-10" />
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Eletricista 24h em Brasília
+                Eletricista 24h em Brasília e Águas Lindas
               </h1>
               <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                A <strong>CNSOUSATEC ®</strong> é especialista em serviços elétricos urgentes. Atendemos residências, comércios e condomínios em todo o DF com técnicos certificados (NR-10).
+                A <strong>CNSOUSATEC ®</strong> é especialista em serviços elétricos urgentes. Atendemos Brasília, Águas Lindas de Goiás e todo o Entorno com técnicos certificados (NR-10).
               </p>
               <a
                 href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção elétrica com a Cnsousatec."

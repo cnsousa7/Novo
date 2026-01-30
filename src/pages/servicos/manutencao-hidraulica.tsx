@@ -10,15 +10,15 @@ export default function ManutencaoHidraulica() {
   return (
     <>
       <SEO
-        title="Encanador 24h Brasília | CNSOUSATEC ® Hidráulica Urgente"
-        description="💧 Precisa de Encanador em Brasília? A CNSOUSATEC ® oferece atendimento 24h para Caça Vazamentos, Reparos Hidráulicos, Desentupimento e Manutenção Predial. Orçamento Grátis. Ligue Agora!"
+        title="Encanador 24h Brasília e Águas Lindas | CNSOUSATEC ®"
+        description="💧 Precisa de Encanador em Brasília ou Águas Lindas de Goiás? A CNSOUSATEC ® oferece atendimento 24h para Caça Vazamentos, Reparos Hidráulicos e Desentupimento. Orçamento Grátis. Ligue Agora!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-hidraulica"
       />
       <ServiceSchema 
-        name="Encanador 24h Brasília"
-        description="Serviços de encanador de emergência, caça vazamentos, desentupimento e manutenção hidráulica predial em Brasília."
+        name="Encanador 24h Brasília e Águas Lindas"
+        description="Serviços de encanador de emergência, caça vazamentos e desentupimento em Brasília, Águas Lindas de Goiás e todo o Entorno."
         serviceType="Plumbing Service"
-        areaServed={['Brasília', 'Taguatinga', 'Águas Claras', 'Guará', 'Sudoeste', 'Asa Norte', 'Asa Sul']}
+        areaServed={['Brasília', 'Taguatinga', 'Águas Claras', 'Guará', 'Sudoeste', 'Asa Norte', 'Asa Sul', 'Águas Lindas de Goiás', 'Jardim Brasília', 'Mansões Centro']}
       />
 
       <Header />
@@ -40,10 +40,10 @@ export default function ManutencaoHidraulica() {
                 <Wrench className="w-10 h-10" />
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Encanador 24h em Brasília
+                Encanador 24h em Brasília e Águas Lindas
               </h1>
               <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
-                A <strong>CNSOUSATEC ®</strong> é especialista em serviços hidráulicos urgentes e caça vazamentos. Atendemos todo o DF com rapidez e garantia técnica.
+                A <strong>CNSOUSATEC ®</strong> é especialista em serviços hidráulicos urgentes e caça vazamentos em Brasília, Águas Lindas de Goiás e todo o Entorno.
               </p>
               <a
                 href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica com a Cnsousatec."
