@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import Image from 'next/image';
+import { localidades } from '@/lib/localidades';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -129,8 +130,27 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400 dark:text-gray-400">
-          <p>&copy; {currentYear} Cnsousatec. Todos os direitos reservados.</p>
+        {/* Regiões Atendidas - SEO Internal Linking */}
+        <div className="border-t border-gray-200 dark:border-gray-800 mt-12 pt-8">
+          <h3 className="text-lg font-bold mb-6 text-center">Regiões Atendidas em Brasília e Goiás</h3>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+            {localidades.map((local) => (
+              <Link 
+                key={local.slug} 
+                href={`/local/manutencao-eletrica-${local.slug}`}
+                className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                {local.nome}
+              </Link>
+            ))}
+          </div>
+          <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-6">
+            Atendimento 24h em todas as regiões administrativas do DF e bairros de Águas Lindas de Goiás.
+          </p>
+        </div>
+
+        <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
+          <p>&copy; {currentYear} CNSOUSATEC ®. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

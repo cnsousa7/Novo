@@ -91,8 +91,8 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A <strong>Cnsousatec</strong> é a sua melhor escolha para serviços de <strong>{servicoNome}</strong> em <strong>{localidadeNome}</strong>. 
-                  Atendemos residências, empresas, condomínios e estabelecimentos comerciais com equipe qualificada e equipamentos modernos.
+                  A <strong>CNSOUSATEC ®</strong> é referência em <strong>{servicoNome}</strong> na região de <strong>{localidadeNome}</strong>. 
+                  Nossa equipe técnica está estrategicamente posicionada para oferecer o atendimento mais rápido em {localidadeNome}, seja para uma emergência residencial ou manutenção em grandes condomínios e empresas.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -154,7 +154,7 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
                 </div>
 
                 <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
-                  Serviços de {servicoNome} que Oferecemos em {localidadeNome}
+                  Especialidades em {servicoNome} - Atendimento em {localidadeNome}
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
