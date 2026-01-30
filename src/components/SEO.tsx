@@ -33,6 +33,7 @@ export default function SEO({
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content="eletricista, encanador, desentupidora, tecnico eletronica, conserto de placas, caça vazamentos, brasilia, aguas lindas, df, go, cnsousatec" />
       {noindex && <meta name="robots" content="noindex,nofollow" />}
       
       {/* Favicon and Logo for Google Search */}

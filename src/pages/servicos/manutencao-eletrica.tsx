@@ -10,8 +10,8 @@ export default function ManutencaoEletrica() {
   return (
     <>
       <SEO
-        title="Eletricista 24h Brasília e Águas Lindas | CNSOUSATEC ®"
-        description="⚡ Precisa de Eletricista em Brasília ou Águas Lindas de Goiás? A CNSOUSATEC ® oferece atendimento 24h para Curto-Circuito, Instalações e Manutenção. Orçamento Grátis em todo o DF e Entorno. Ligue Agora!"
+        title="Eletricista 24h Brasília e Águas Lindas | CNSOUSATEC ® Elétrica"
+        description="⚡ Procurando Eletricista em Brasília ou Águas Lindas? A CNSOUSATEC ® é especialista em Elétrica Residencial e Predial, Curto-Circuito e Instalações. Eletricista de Emergência 24h com Orçamento Grátis. Ligue!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletrica"
       />
       <ServiceSchema 

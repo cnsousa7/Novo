@@ -273,7 +273,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
-  const servicoNome = servicos[servicoKey as keyof typeof servicos] || 'Serviço';
+  const servicoBase = servicos[servicoKey as keyof typeof servicos] || 'Serviço';
+  const popularTerm = servicoKey === 'manutencao-eletrica' ? 'Eletricista' : 
+                      servicoKey === 'manutencao-eletronica' ? 'Técnico em Eletrônica' : 'Encanador e Desentupidora';
+  const servicoNome = `${popularTerm} (${servicoBase})`;
   const localidadeData = getLocalidadeBySlug(localidadeSlug);
 
   if (!localidadeData) {
@@ -282,8 +285,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { nome: localidadeNome, uf, foco, whatsappMsg } = localidadeData;
 
-  const title = `${servicoNome} em ${localidadeNome} ${uf} | CNSOUSATEC ®`;
-  const description = `⚡ CNSOUSATEC: Especialista em ${servicoNome} em ${localidadeNome} ${uf}. Atendimento 24h urgente para residências e empresas. Qualidade garantida pela CNSOUSATEC. Ligue agora!`;
+  const title = `${popularTerm} em ${localidadeNome} ${uf} | CNSOUSATEC ®`;
+  const description = `⚡ Procurando ${popularTerm} em ${localidadeNome} ${uf}? A CNSOUSATEC ® é especialista em ${servicoBase} com atendimento 24h urgente para residências e empresas. Orçamento Grátis. Ligue agora!`;
 
   return {
     props: {

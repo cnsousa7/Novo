@@ -10,8 +10,8 @@ export default function ManutencaoEletronica() {
   return (
     <>
       <SEO
-        title="Manutenção Eletrônica Brasília e Águas Lindas | CNSOUSATEC ®"
-        description="🛠️ CNSOUSATEC: Conserto de Placas e Equipamentos Eletrônicos em Brasília e Águas Lindas de Goiás. Manutenção de Sistemas de Automação e Controle. Confira!"
+        title="Técnico em Eletrônica Brasília e Águas Lindas | CNSOUSATEC ®"
+        description="🛠️ CNSOUSATEC: Técnico em Eletrônica para Conserto de Placas, Portões Eletrônicos e Equipamentos Industriais em Brasília e Águas Lindas. Assistência Técnica Especializada. Confira!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-eletronica"
       />
       <ServiceSchema 

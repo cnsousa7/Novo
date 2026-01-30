@@ -10,8 +10,8 @@ export default function ManutencaoHidraulica() {
   return (
     <>
       <SEO
-        title="Encanador 24h Brasília e Águas Lindas | CNSOUSATEC ®"
-        description="💧 Precisa de Encanador em Brasília ou Águas Lindas de Goiás? A CNSOUSATEC ® oferece atendimento 24h para Caça Vazamentos, Reparos Hidráulicos e Desentupimento. Orçamento Grátis. Ligue Agora!"
+        title="Encanador 24h Brasília e Águas Lindas | CNSOUSATEC ® Hidráulica"
+        description="💧 Precisa de Encanador em Brasília ou Águas Lindas? Especialista em Caça Vazamentos, Desentupidora, Reparos de Vaso Sanitário e Tubulações. Encanador de Emergência 24h com Orçamento Grátis. Ligue!"
         canonical="https://www.cnsousatec.com.br/servicos/manutencao-hidraulica"
       />
       <ServiceSchema 
