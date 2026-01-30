@@ -14,22 +14,22 @@ const localidades = [
   'santa-lucia', 'parque-da-barragem'
 ];
 
-// URLs estáticas
+// URLs estáticas com prioridade máxima
 const staticUrls = [
   { url: '', priority: '1.0', changefreq: 'daily' },
-  { url: '/servicos/manutencao-eletrica', priority: '0.9', changefreq: 'weekly' },
-  { url: '/servicos/manutencao-eletronica', priority: '0.9', changefreq: 'weekly' },
-  { url: '/servicos/manutencao-hidraulica', priority: '0.9', changefreq: 'weekly' },
+  { url: '/servicos/manutencao-eletrica', priority: '1.0', changefreq: 'daily' },
+  { url: '/servicos/manutencao-eletronica', priority: '1.0', changefreq: 'daily' },
+  { url: '/servicos/manutencao-hidraulica', priority: '1.0', changefreq: 'daily' },
 ];
 
-// Gerar URLs dinâmicas
+// Gerar URLs dinâmicas com prioridade alta para indexação rápida
 const dynamicUrls = [];
 servicos.forEach(servico => {
   localidades.forEach(localidade => {
     dynamicUrls.push({
       url: `/local/${servico}-${localidade}`,
-      priority: '0.8',
-      changefreq: 'weekly'
+      priority: '0.9',
+      changefreq: 'daily'
     });
   });
 });
@@ -37,7 +37,7 @@ servicos.forEach(servico => {
 const allUrls = [...staticUrls, ...dynamicUrls];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 ${allUrls
   .map(({ url, priority, changefreq }) => {
     return `  <url>
@@ -56,5 +56,5 @@ if (!fs.existsSync(publicDir)) {
 }
 
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap);
-console.log('✅ Sitemap estático gerado com sucesso em public/sitemap.xml');
-console.log(`📊 Total de URLs: ${allUrls.length}`);
+console.log('✅ Sitemap de ALTA PRIORIDADE gerado com sucesso em public/sitemap.xml');
+console.log(`📊 Total de URLs otimizadas: ${allUrls.length}`);
