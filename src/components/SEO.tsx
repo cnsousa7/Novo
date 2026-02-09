@@ -25,7 +25,15 @@ export default function SEO({
     
   const fullTitle = optimizedTitle.includes(siteName) ? optimizedTitle : `${optimizedTitle} | ${siteName}`;
   const baseUrl = 'https://www.cnsousatec.com.br';
-  const canonicalUrl = canonical || baseUrl;
+  
+  // Se não houver canonical definida, usa a URL base. 
+  // Importante: Garante que a canonical sempre use a versão final (https://www)
+  let canonicalUrl = canonical || baseUrl;
+  
+  // Remove barras finais para manter consistência, exceto na home
+  if (canonicalUrl !== baseUrl && canonicalUrl.endsWith('/')) {
+    canonicalUrl = canonicalUrl.slice(0, -1);
+  }
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
 
   return (

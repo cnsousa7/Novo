@@ -1,5 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
+# Sitemap oficial (Versão final https://www)
 Sitemap: https://www.cnsousatec.com.br/sitemap.xml
+
+# Host oficial para evitar redirecionamentos
+Host: https://www.cnsousatec.com.br

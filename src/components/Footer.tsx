@@ -132,73 +132,20 @@ export default function Footer() {
 
         {/* Regiões Atendidas - SEO Internal Linking */}
         <div className="border-t border-gray-200 dark:border-gray-800 mt-12 pt-8">
-          <h3 className="text-lg font-bold mb-6 text-center">Regiões Atendidas</h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
-            <div>
-              <h4 className="font-bold mb-3 text-blue-600 dark:text-blue-400">Brasília - DF</h4>
-              <ul className="space-y-1">
-                {localidades.filter(l => l.uf === 'DF').map((local) => (
-                  <li key={local.slug}>
-                    <Link 
-                      href={`/local/manutencao-eletrica-${local.slug}`}
-                      className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors"
-                    >
-                      {local.nome}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-3 text-blue-600 dark:text-blue-400">Águas Lindas - GO</h4>
-              <ul className="space-y-1">
-                {localidades.filter(l => l.uf === 'GO').slice(0, 10).map((local) => (
-                  <li key={local.slug}>
-                    <Link 
-                      href={`/local/manutencao-eletrica-${local.slug}`}
-                      className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors"
-                    >
-                      {local.nome}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-3 text-blue-600 dark:text-blue-400">Serviços Hidráulicos</h4>
-              <ul className="space-y-1">
-                {localidades.slice(0, 10).map((local) => (
-                  <li key={`hid-${local.slug}`}>
-                    <Link 
-                      href={`/local/manutencao-hidraulica-${local.slug}`}
-                      className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors"
-                    >
-                      Hidráulica em {local.nome}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-3 text-blue-600 dark:text-blue-400">Serviços Eletrônicos</h4>
-              <ul className="space-y-1">
-                {localidades.slice(0, 10).map((local) => (
-                  <li key={`ele-${local.slug}`}>
-                    <Link 
-                      href={`/local/manutencao-eletronica-${local.slug}`}
-                      className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors"
-                    >
-                      Eletrônica em {local.nome}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <h3 className="text-lg font-bold mb-6 text-center">Regiões Atendidas em Brasília e Goiás</h3>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+            {localidades.map((local) => (
+              <Link 
+                key={local.slug} 
+                href={`/local/manutencao-eletrica-${local.slug}`}
+                className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                {local.nome}
+              </Link>
+            ))}
           </div>
-          
-          <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-8">
-            Atendimento técnico especializado 24h em todas as regiões administrativas do Distrito Federal e entorno.
+          <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-6">
+            Atendimento 24h em todas as regiões administrativas do DF e bairros de Águas Lindas de Goiás.
           </p>
         </div>
 
