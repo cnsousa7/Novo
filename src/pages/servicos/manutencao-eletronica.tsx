@@ -40,10 +40,10 @@ export default function ManutencaoEletronica() {
                 <Cpu className="w-10 h-10" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Manutenção Eletrônica em Brasília e Águas Lindas
+                Manutenção Eletrônica Especializada em Brasília
               </h1>
-              <p className="text-xl text-blue-100 mb-8">
-                Conserto de placas e equipamentos em Brasília, Águas Lindas de Goiás e todo o Entorno para empresas e condomínios.
+              <p className="text-xl text-purple-100 mb-8">
+                Reparo e manutenção de equipamentos eletrônicos, sistemas de automação e controle industrial no Distrito Federal
               </p>
               <a
                 href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção eletrônica com a Cnsousatec."
@@ -209,11 +209,11 @@ export default function ManutencaoEletronica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A Cnsousatec atende empresas em todas as regiões do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e outras localidades. Contamos com uma equipe móvel equipada com ferramentas e instrumentos de diagnóstico, permitindo atendimento rápido e eficiente no local do cliente quando necessário.
+                  A Cnsousatec atende todas as regiões administrativas do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e demais localidades. Nossa frota está estrategicamente posicionada para garantir atendimento rápido e eficiente em qualquer região.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Se sua empresa precisa de manutenção eletrônica confiável e de qualidade, entre em contato conosco. Oferecemos orçamentos sem compromisso e estamos prontos para atender suas necessidades com profissionalismo e agilidade. Nossa missão é garantir que seus equipamentos eletrônicos funcionem perfeitamente, contribuindo para a produtividade e o sucesso do seu negócio.
+                  Seja para o reparo de um único equipamento ou para a manutenção de todo o seu parque industrial, estamos prontos para atender sua necessidade com excelência, pontualidade e preços competitivos. Entre em contato conosco e solicite um orçamento sem compromisso. Nossa equipe de atendimento está pronta para esclarecer todas as suas dúvidas e oferecer a melhor solução para o seu caso.
                 </p>
               </motion.div>
             </div>
@@ -221,7 +221,7 @@ export default function ManutencaoEletronica() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-purple-600 text-white py-16">
+        <section className="bg-purple-600 dark:bg-purple-900 text-white py-16 transition-colors duration-300">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
