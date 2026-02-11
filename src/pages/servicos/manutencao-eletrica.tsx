@@ -39,11 +39,11 @@ export default function ManutencaoEletrica() {
               <div className="bg-blue-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Zap className="w-10 h-10" />
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Eletricista 24h em Brasília e Águas Lindas
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Manutenção Elétrica Profissional em Brasília
               </h1>
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                A <strong>CNSOUSATEC ®</strong> é especialista em serviços elétricos urgentes. Atendemos Brasília, Águas Lindas de Goiás e todo o Entorno com técnicos certificados (NR-10).
+              <p className="text-xl text-blue-100 mb-8">
+                Soluções completas em instalações e manutenção elétrica para empresas, condomínios e prédios comerciais no Distrito Federal
               </p>
               <a
                 href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção elétrica com a Cnsousatec."
@@ -73,11 +73,11 @@ export default function ManutencaoEletrica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A <strong>CNSOUSATEC ®</strong> é referência em serviços de manutenção elétrica no Distrito Federal, oferecendo soluções completas e personalizadas para empresas, condomínios e estabelecimentos comerciais. Nossa equipe de profissionais altamente qualificados está preparada para atender todas as suas necessidades em instalações elétricas, desde projetos simples até sistemas complexos de alta tensão.
+                  A <strong>Cnsousatec</strong> é referência em serviços de manutenção elétrica no Distrito Federal, oferecendo soluções completas e personalizadas para empresas, condomínios e estabelecimentos comerciais. Nossa equipe de profissionais altamente qualificados está preparada para atender todas as suas necessidades em instalações elétricas, desde projetos simples até sistemas complexos de alta tensão.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Com anos de experiência no mercado, entendemos que a segurança e a eficiência do sistema elétrico são fundamentais para o funcionamento adequado de qualquer empreendimento. Por isso, trabalhamos com equipamentos de última geração e seguimos rigorosamente todas as normas técnicas da ABNT (NBR 5410), garantindo instalações seguras, duráveis e em conformidade com as exigências legais.
+                  Com anos de experiência no mercado, entendemos que a segurança e a eficiência do sistema elétrico são fundamentais para o funcionamento adequado de qualquer empreendimento. Por isso, trabalhamos com equipamentos de última geração e seguimos rigorosamente todas as normas técnicas da ABNT, garantindo instalações seguras, duráveis e em conformidade com as exigências legais.
                 </p>
 
                 <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
@@ -147,11 +147,11 @@ export default function ManutencaoEletrica() {
                 </div>
 
                 <h2 className="text-3xl font-bold mb-6 mt-12 text-gray-900 dark:text-white">
-                  Por Que Escolher a CNSOUSATEC ®?
+                  Por Que Escolher a Cnsousatec?
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Quando se trata de manutenção elétrica, a escolha do prestador de serviços é crucial para garantir segurança, qualidade e tranquilidade. A <strong>CNSOUSATEC ®</strong> se destaca no mercado por diversos motivos que fazem a diferença no resultado final do trabalho.
+                  Quando se trata de manutenção elétrica, a escolha do prestador de serviços é crucial para garantir segurança, qualidade e tranquilidade. A Cnsousatec se destaca no mercado por diversos motivos que fazem a diferença no resultado final do trabalho.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -197,7 +197,7 @@ export default function ManutencaoEletrica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A <strong>CNSOUSATEC ®</strong> atende todas as regiões administrativas do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e demais localidades. Nossa frota está estrategicamente posicionada para garantir atendimento rápido e eficiente em qualquer região.
+                  A Cnsousatec atende todas as regiões administrativas do Distrito Federal, incluindo Brasília, Taguatinga, Ceilândia, Samambaia, Águas Claras, Guará, Sobradinho, Planaltina, Gama e demais localidades. Nossa frota está estrategicamente posicionada para garantir atendimento rápido e eficiente em qualquer região.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
