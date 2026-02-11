@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import SchemaLocalBusiness from '@/components/SchemaLocalBusiness';
+import Script from 'next/script';
 
 export default function Document() {
   return (
@@ -22,6 +23,21 @@ export default function Document() {
         <meta property="og:image:height" content="630" />
         
         <SchemaLocalBusiness />
+        
+        {/* Google Analytics (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MX2VGWPM7J"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-MX2VGWPM7J', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
       </Head>
       <body>
         <Main />

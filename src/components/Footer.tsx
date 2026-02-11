@@ -132,63 +132,20 @@ export default function Footer() {
 
         {/* Regiões Atendidas - SEO Internal Linking */}
         <div className="border-t border-gray-200 dark:border-gray-800 mt-12 pt-8">
-          <h3 className="text-lg font-bold mb-6 text-center">Regiões Atendidas</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-            {/* Coluna Elétrica */}
-            <div>
-              <h4 className="font-bold mb-4 text-blue-600 dark:text-blue-400 border-b pb-2">Manutenção Elétrica</h4>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                {localidades.map((local) => (
-                  <Link 
-                    key={`elec-${local.slug}`} 
-                    href={`/local/manutencao-eletrica-${local.slug}`}
-                    className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors truncate"
-                    title={`Eletricista em ${local.nome}`}
-                  >
-                    {local.nome}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Coluna Hidráulica */}
-            <div>
-              <h4 className="font-bold mb-4 text-blue-600 dark:text-blue-400 border-b pb-2">Manutenção Hidráulica</h4>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                {localidades.map((local) => (
-                  <Link 
-                    key={`hydr-${local.slug}`} 
-                    href={`/local/manutencao-hidraulica-${local.slug}`}
-                    className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors truncate"
-                    title={`Encanador em ${local.nome}`}
-                  >
-                    {local.nome}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Coluna Eletrônica */}
-            <div>
-              <h4 className="font-bold mb-4 text-blue-600 dark:text-blue-400 border-b pb-2">Manutenção Eletrônica</h4>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                {localidades.map((local) => (
-                  <Link 
-                    key={`eletr-${local.slug}`} 
-                    href={`/local/manutencao-eletronica-${local.slug}`}
-                    className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors truncate"
-                    title={`Técnico em Eletrônica em ${local.nome}`}
-                  >
-                    {local.nome}
-                  </Link>
-                ))}
-              </div>
-            </div>
+          <h3 className="text-lg font-bold mb-6 text-center">Regiões Atendidas em Brasília e Goiás</h3>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+            {localidades.map((local) => (
+              <Link 
+                key={local.slug} 
+                href={`/local/manutencao-eletrica-${local.slug}`}
+                className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                {local.nome}
+              </Link>
+            ))}
           </div>
-          
-          <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-10">
-            Atendimento técnico especializado 24h em todas as regiões administrativas do Distrito Federal e entorno de Goiás.
+          <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-6">
+            Atendimento 24h em todas as regiões administrativas do DF e bairros de Águas Lindas de Goiás.
           </p>
         </div>
 
