@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import Image from 'next/image';
-import { localidades } from '@/lib/localidades';
+import { localidades } from '../lib/localidades';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
