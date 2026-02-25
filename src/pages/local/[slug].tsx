@@ -1,14 +1,14 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { localidades, servicos, getLocalidadeBySlug } from '@/lib/localidades';
+import { localidades, servicos, getLocalidadeBySlug } from '../../lib/localidades';
 import Head from 'next/head';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import Testimonials from '@/components/Testimonials';
-import ServicesSection from '@/components/ServicesSection';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Testimonials from '../../components/Testimonials';
+import ServicesSection from '../../components/ServicesSection';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, CheckCircle } from 'lucide-react';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import SEO from '@/components/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import SEO from '../../components/SEO';
 
 interface LocalPageProps {
   servico: string;

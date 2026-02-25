@@ -1,8 +1,8 @@
-import SEO from '@/components/SEO';
-import Header from '@/components/Header';
-import ServiceSchema from '@/components/ServiceSchema';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import Footer from '@/components/Footer';
+import SEO from '../../components/SEO';
+import Header from '../../components/Header';
+import ServiceSchema from '../../components/ServiceSchema';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import Footer from '../../components/Footer';
 import { motion } from 'framer-motion';
 import { Cpu, CheckCircle, Phone, Wrench, Zap, Settings } from 'lucide-react';
 

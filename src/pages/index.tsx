@@ -2,13 +2,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Zap, Shield, Clock, ArrowRight, CheckCircle2, Phone, Mail, MapPin } from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import Testimonials from '@/components/Testimonials';
-import ServicesSection from '@/components/ServicesSection';
-import SchemaLocalBusiness from '@/components/SchemaLocalBusiness';
-import SEO from '@/components/SEO';
-import FAQ from '@/components/FAQ';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Testimonials from '../components/Testimonials';
+import ServicesSection from '../components/ServicesSection';
+import SchemaLocalBusiness from '../components/SchemaLocalBusiness';
+import SEO from '../components/SEO';
+import FAQ from '../components/FAQ';
 
 const fastTransition = { duration: 0.3, ease: "easeOut" as const };
 
