@@ -3,16 +3,31 @@ const path = require('path');
 
 const baseUrl = 'https://www.cnsousatec.com.br';
 
+// Função para extrair localidades do arquivo localidades.ts sem precisar de transpilador TS
+function getLocalidadesFromTS() {
+  const tsPath = path.join(__dirname, '../src/lib/localidades.ts');
+  const content = fs.readFileSync(tsPath, 'utf8');
+  
+  // Regex para encontrar os slugs dentro do array de objetos
+  const slugRegex = /slug:\s*'([^']+)'/g;
+  const slugs = [];
+  let match;
+  
+  while ((match = slugRegex.exec(content)) !== null) {
+    slugs.push(match[1]);
+  }
+  
+  return slugs;
+}
+
 // Localidades e serviços
 const servicos = ['manutencao-eletrica', 'manutencao-eletronica', 'manutencao-hidraulica'];
-const localidades = [
-  'asa-sul', 'asa-norte', 'sudoeste', 'noroeste', 'lago-sul', 'lago-norte',
-  'aguas-claras', 'guara', 'taguatinga', 'vicente-pires',
-  'jardim-brasilia', 'mansoes-centro', 'mansoes-odisseia', 'perola',
-  'jardim-barragem', 'jardim-querencia', 'jardim-paraiso', 'jardim-america',
-  'setor-01', 'setor-02', 'setor-03', 'setor-04', 'setor-05', 'setor-08',
-  'santa-lucia', 'parque-da-barragem'
-];
+const localidades = getLocalidadesFromTS();
+
+if (localidades.length === 0) {
+  console.error('❌ Erro: Nenhuma localidade encontrada no arquivo localidades.ts');
+  process.exit(1);
+}
 
 // URLs estáticas com prioridade máxima
 const staticUrls = [
@@ -58,3 +73,4 @@ if (!fs.existsSync(publicDir)) {
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap);
 console.log('✅ Sitemap de ALTA PRIORIDADE gerado com sucesso em public/sitemap.xml');
 console.log(`📊 Total de URLs otimizadas: ${allUrls.length}`);
+console.log(`📍 Total de localidades processadas: ${localidades.length}`);
