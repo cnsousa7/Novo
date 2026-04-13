@@ -40,7 +40,7 @@ export default function SEO({
     "logo": `${baseUrl}/logo-clean.png`,
     "image": `${baseUrl}/logo-clean.png`,
     "description": "Especialista em Manutenção Elétrica, Eletrônica e Hidráulica em Brasília e Entorno. Atendimento 24h para residências e empresas.",
-    "telephone": "+5561981155457",
+    "telephone": "+5561992743428",
     "email": "contato@cnsousatec.com.br",
     "address": {
       "@type": "PostalAddress",
