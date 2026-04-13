@@ -7,6 +7,7 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   noindex?: boolean;
+  schemaType?: 'LocalBusiness' | 'Organization' | 'Service';
 }
 
 export default function SEO({
@@ -16,6 +17,7 @@ export default function SEO({
   ogImage = '/logo-clean.png',
   ogType = 'website',
   noindex = false,
+  schemaType = 'LocalBusiness',
 }: SEOProps) {
   const siteName = 'Cnsousatec';
   // Título otimizado para CTR: Adiciona "Orçamento Grátis" ou "DF" se não houver
@@ -25,15 +27,59 @@ export default function SEO({
     
   const fullTitle = optimizedTitle.includes(siteName) ? optimizedTitle : `${optimizedTitle} | ${siteName}`;
   const baseUrl = 'https://www.cnsousatec.com.br';
-  const canonicalUrl = canonical || baseUrl;
+  const canonicalUrl = (canonical || baseUrl).toLowerCase();
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
+
+  // Schema.org Structured Data
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": schemaType,
+    "name": siteName,
+    "alternateName": "CNSOUSA TEC",
+    "url": baseUrl,
+    "logo": `${baseUrl}/logo-clean.png`,
+    "image": `${baseUrl}/logo-clean.png`,
+    "description": "Especialista em Manutenção Elétrica, Eletrônica e Hidráulica em Brasília e Entorno. Atendimento 24h para residências e empresas.",
+    "telephone": "+5561981155457",
+    "email": "contato@cnsousatec.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brasília",
+      "addressRegion": "DF",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -15.7939,
+      "longitude": -47.8828
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://www.instagram.com/cnsousatec",
+      "https://www.facebook.com/cnsousatec"
+    ],
+    "priceRange": "$$"
+  };
 
   return (
     <Head>
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content="eletricista, encanador, desentupidora, tecnico eletronica, conserto de placas, caça vazamentos, brasilia, aguas lindas, df, go, cnsousatec" />
+      <meta name="keywords" content="eletricista, encanador, desentupidora, tecnico eletronica, conserto de placas, caça vazamentos, brasilia, aguas lindas, df, go, cnsousatec, manutencao predial" />
       {noindex && <meta name="robots" content="noindex,nofollow" />}
       
       {/* Favicon and Logo for Google Search */}
@@ -73,6 +119,12 @@ export default function SEO({
       <meta name="geo.placename" content="Brasília" />
       <meta name="geo.position" content="-15.7939;-47.8828" />
       <meta name="ICBM" content="-15.7939, -47.8828" />
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
     </Head>
   );
 }
