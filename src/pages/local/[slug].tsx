@@ -11,10 +11,12 @@ import { motion } from 'framer-motion';
 import { Phone, MapPin, CheckCircle } from 'lucide-react';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
+import FAQ from '../../components/FAQ';
 
 interface LocalPageProps {
   servico: string;
   servicoNome: string;
+  servicoBase: string;
   localidade: string;
   localidadeNome: string;
   uf: 'DF' | 'GO';
@@ -26,7 +28,7 @@ interface LocalPageProps {
 
 
 
-export default function LocalPage({ servico, servicoNome, localidade, localidadeNome, uf, foco, whatsappMsg, title, description }: LocalPageProps) {
+export default function LocalPage({ servico, servicoNome, servicoBase, localidade, localidadeNome, uf, foco, whatsappMsg, title, description }: LocalPageProps) {
   const router = useRouter();
 
   useEffect(() => {
@@ -215,6 +217,23 @@ export default function LocalPage({ servico, servicoNome, localidade, localidade
         <ServicesSection uf={uf} />
         <Testimonials uf={uf} />
 
+        <FAQ 
+          items={[
+            {
+              question: `Qual o tempo de resposta para ${servicoNome} em ${localidadeNome}?`,
+              answer: `Para atendimentos de ${servicoBase} em ${localidadeNome}, nossa equipe técnica costuma chegar em um prazo de 30 a 60 minutos, garantindo agilidade total para sua residência ou empresa.`
+            },
+            {
+              question: `A CNSOUSATEC ® atende emergências 24h em ${localidadeNome}?`,
+              answer: `Sim! Oferecemos suporte técnico especializado 24 horas por dia em ${localidadeNome} e região, inclusive aos finais de semana e feriados, para serviços de elétrica, eletrônica e hidráulica.`
+            },
+            {
+              question: `Como solicitar um orçamento para ${servicoBase} em ${localidadeNome}?`,
+              answer: `Você pode solicitar um orçamento gratuito clicando no botão do WhatsApp em nosso site. Atendemos ${localidadeNome} com foco em ${foco}, oferecendo transparência e o melhor custo-benefício.`
+            }
+          ]}
+        />
+
         {/* CTA Section */}
         <section className="bg-blue-600 text-white py-16">
           <div className="container mx-auto px-4 text-center">
@@ -329,8 +348,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { nome: localidadeNome, uf, foco, whatsappMsg } = localidadeData;
 
-
-
   const title = `${popularTerm} em ${localidadeNome} ${uf} | CNSOUSATEC ®`;
   const description = `⚡ Procurando ${popularTerm} em ${localidadeNome} ${uf}? A CNSOUSATEC ® é especialista em ${servicoBase} com atendimento 24h urgente para residências e empresas em ${localidadeNome}. Orçamento Grátis. Ligue agora!`;
 
@@ -338,6 +355,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       servico: servicoKey,
       servicoNome,
+      servicoBase,
       localidade: localidadeSlug,
       localidadeNome,
       uf,
