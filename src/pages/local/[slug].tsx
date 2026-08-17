@@ -331,8 +331,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { nome: localidadeNome, uf, foco, whatsappMsg } = localidadeData;
 
-  const title = `${popularTerm} em ${localidadeNome} ${uf} | CNSOUSATEC ®`;
-  const description = `⚡ Procurando ${popularTerm} em ${localidadeNome} ${uf}? A CNSOUSATEC ® é especialista em ${servicoBase} com atendimento 24h urgente para residências e empresas em ${localidadeNome}. Orçamento Grátis. Ligue agora!`;
+  const title = `${popularTerm} em ${localidadeNome} | Atendimento ${uf} | CNSOUSATEC`;
+  const description = `${popularTerm} em ${localidadeNome}, ${uf}: ${servicoBase} para residências e empresas, com equipe local e orçamento expresso. Fale com a CNSOUSATEC agora.`;
 
   return {
     props: {

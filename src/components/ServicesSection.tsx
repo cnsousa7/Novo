@@ -59,7 +59,7 @@ export default function ServicesSection({ uf = 'DF' }: ServicesSectionProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-100 dark:border-gray-700 overflow-hidden"
+              className="cns-service-card bg-white dark:bg-gray-900 rounded-xl shadow-lg transition-all duration-200 border border-gray-100 dark:border-gray-700 overflow-hidden"
             >
               <div className="h-48 overflow-hidden">
                 <img 
@@ -72,7 +72,7 @@ export default function ServicesSection({ uf = 'DF' }: ServicesSectionProps) {
                 <div className="mb-6">{service.icon}</div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{service.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 min-h-[80px]">{service.desc}</p>
-                <Link href={service.link} className="text-blue-600 dark:text-blue-400 font-semibold inline-flex items-center gap-2 hover:underline">
+                <Link href={service.link} className="cns-service-card__link text-blue-600 dark:text-blue-400 font-semibold inline-flex items-center gap-2 hover:underline">
                   Saiba mais <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
