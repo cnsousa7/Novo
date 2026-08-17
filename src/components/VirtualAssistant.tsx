@@ -1,5 +1,12 @@
 import { useMemo, useState } from 'react';
 import { MessageCircle, Send, X } from 'lucide-react';
+import {
+  trackChatbotOpen,
+  trackChatbotServiceSelected,
+  trackChatbotUrgencySelected,
+  trackChatbotWhatsAppClick,
+  trackWhatsAppClick,
+} from '../lib/analytics';
 
 const WHATSAPP_NUMBER = '5561992743428';
 
@@ -50,6 +57,7 @@ export default function VirtualAssistant() {
     const selected = serviceOptions.find((option) => option.id === nextService);
     if (!selected || step !== 'service') return;
 
+    trackChatbotServiceSelected(selected.label);
     setService(nextService);
     setStep('urgency');
     setMessages((current) => [
@@ -67,6 +75,7 @@ export default function VirtualAssistant() {
     const selected = urgencyOptions.find((option) => option.id === nextUrgency);
     if (!selected || step !== 'urgency') return;
 
+    trackChatbotUrgencySelected(selectedServiceLabel, selected.label);
     setUrgency(nextUrgency);
     setStep('done');
     setMessages((current) => [
@@ -92,7 +101,10 @@ export default function VirtualAssistant() {
         aria-label={isOpen ? 'Fechar assistente virtual' : 'Abrir assistente virtual'}
         aria-expanded={isOpen}
         aria-controls="virtual-assistant-panel"
-        onClick={() => setIsOpen((current) => !current)}
+        onClick={() => {
+          if (!isOpen) trackChatbotOpen();
+          setIsOpen((current) => !current);
+        }}
       >
         {isOpen ? <X size={24} aria-hidden="true" /> : <MessageCircle size={25} aria-hidden="true" />}
         <span className="virtual-assistant-trigger__label">Atendimento</span>
@@ -157,6 +169,15 @@ export default function VirtualAssistant() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackChatbotWhatsAppClick(selectedServiceLabel, selectedUrgencyLabel);
+                  trackWhatsAppClick({
+                    placement: 'chatbot',
+                    service: selectedServiceLabel,
+                    label: 'Falar no WhatsApp',
+                    messageType: selectedUrgencyLabel,
+                  });
+                }}
               >
                 <Send size={18} aria-hidden="true" />
                 Falar no WhatsApp
