@@ -17,6 +17,8 @@ export default function ManutencaoEletrica() {
       />
       <ServiceSchema 
         name="Eletricista 24h Brasília e Águas Lindas"
+        serviceSlug="manutencao-eletrica"
+        canonicalUrl="https://www.cnsousatec.com.br/servicos/manutencao-eletrica"
         description="Serviços elétricos de emergência, curto-circuito e manutenção predial em Brasília, Águas Lindas de Goiás e todo o DF e Entorno."
         serviceType="Electrical Engineering"
         areaServed={['Brasília', 'Taguatinga', 'Águas Claras', 'Guará', 'Sudoeste', 'Asa Norte', 'Asa Sul', 'Águas Lindas de Goiás', 'Jardim Brasília', 'Mansões Centro']}

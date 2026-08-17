@@ -13,6 +13,7 @@ import { getLocalityWhatsAppUrl } from '../../components/cro/whatsapp';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
 import FAQ from '../../components/FAQ';
+import LocalBusinessSchema from '../../components/LocalBusinessSchema';
 
 interface LocalPageProps {
   servico: string;
@@ -48,6 +49,16 @@ export default function LocalPage({ servico, servicoNome, servicoBase, localidad
         title={title}
         description={description}
         canonical={`https://www.cnsousatec.com.br/local/${servico}-${localidade}`}
+      />
+      <LocalBusinessSchema
+        serviceName={servicoNome}
+        serviceSlug={servico}
+        serviceType={servicoBase}
+        localityName={localidadeNome}
+        localitySlug={localidade}
+        uf={uf}
+        description={description}
+        canonicalUrl={`https://www.cnsousatec.com.br/local/${servico}-${localidade}`}
       />
 
       <Header />
