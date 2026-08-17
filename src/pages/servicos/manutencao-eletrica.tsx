@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import Footer from '../../components/Footer';
 import { motion } from 'framer-motion';
 import { Zap, CheckCircle, Phone, Shield, Clock, Award } from 'lucide-react';
+import { ExpressQuoteCta, UrgentMaintenanceCta } from '../../components/cro/WhatsAppCta';
 
 export default function ManutencaoEletrica() {
   return (
@@ -45,15 +46,7 @@ export default function ManutencaoEletrica() {
               <p className="text-xl text-blue-100 mb-8">
                 Soluções completas em instalações e manutenção elétrica para empresas, condomínios e prédios comerciais no Distrito Federal
               </p>
-              <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção elétrica com a Cnsousatec."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Solicitar Orçamento
-              </a>
+              <ExpressQuoteCta />
             </motion.div>
           </div>
         </section>
@@ -223,15 +216,7 @@ export default function ManutencaoEletrica() {
               <p className="text-xl mb-8 text-blue-100">
                 Entre em contato agora e receba um orçamento personalizado
               </p>
-              <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção elétrica com a Cnsousatec."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Falar com Especialista
-              </a>
+              <UrgentMaintenanceCta />
             </motion.div>
           </div>
         </section>

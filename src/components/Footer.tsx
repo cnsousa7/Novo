@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import { localidades } from '../lib/localidades';
+import { RegionAccordion } from './cro/RegionAccordion';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -132,59 +133,19 @@ export default function Footer() {
 
         {/* Regiões Atendidas - SEO Internal Linking */}
         <div className="border-t border-gray-200 dark:border-gray-800 mt-12 pt-8">
-          <h3 className="text-lg font-bold mb-6 text-center">Regiões Atendidas</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-            {/* Coluna Elétrica */}
-            <div>
-              <h4 className="font-bold mb-4 text-blue-600 dark:text-blue-400 border-b pb-2">Manutenção Elétrica</h4>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                {localidades.map((local) => (
-                  <Link 
-                    key={`elec-${local.slug}`} 
-                    href={`/local/manutencao-eletrica-${local.slug}`}
-                    className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors truncate"
-                    title={`Eletricista em ${local.nome}`}
-                  >
-                    {local.nome}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Coluna Hidráulica */}
-            <div>
-              <h4 className="font-bold mb-4 text-blue-600 dark:text-blue-400 border-b pb-2">Manutenção Hidráulica</h4>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                {localidades.map((local) => (
-                  <Link 
-                    key={`hydr-${local.slug}`} 
-                    href={`/local/manutencao-hidraulica-${local.slug}`}
-                    className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors truncate"
-                    title={`Encanador em ${local.nome}`}
-                  >
-                    {local.nome}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Coluna Eletrônica */}
-            <div>
-              <h4 className="font-bold mb-4 text-blue-600 dark:text-blue-400 border-b pb-2">Manutenção Eletrônica</h4>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                {localidades.map((local) => (
-                  <Link 
-                    key={`eletr-${local.slug}`} 
-                    href={`/local/manutencao-eletronica-${local.slug}`}
-                    className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors truncate"
-                    title={`Técnico em Eletrônica em ${local.nome}`}
-                  >
-                    {local.nome}
-                  </Link>
-                ))}
-              </div>
-            </div>
+          <div className="max-w-4xl mx-auto space-y-4">
+            <RegionAccordion 
+              title="Regiões Atendidas - Manutenção Elétrica"
+              regions={localidades.map(l => ({ name: l.nome, href: `/local/manutencao-eletrica-${l.slug}` }))}
+            />
+            <RegionAccordion 
+              title="Regiões Atendidas - Manutenção Hidráulica"
+              regions={localidades.map(l => ({ name: l.nome, href: `/local/manutencao-hidraulica-${l.slug}` }))}
+            />
+            <RegionAccordion 
+              title="Regiões Atendidas - Manutenção Eletrônica"
+              regions={localidades.map(l => ({ name: l.nome, href: `/local/manutencao-eletronica-${l.slug}` }))}
+            />
           </div>
           
           <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-10">

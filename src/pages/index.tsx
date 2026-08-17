@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Zap, Shield, Clock, ArrowRight, CheckCircle2, Phone, Mail, MapPin } from 'lucide-react';
+import { UrgentMaintenanceCta, ExpressQuoteCta, MedicalEngineeringCta } from '../components/cro/WhatsAppCta';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Testimonials from '../components/Testimonials';
@@ -26,35 +27,24 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative bg-blue-600 dark:bg-blue-900 py-20 md:py-32 overflow-hidden transition-colors duration-300">
+        <section className="cns-hero relative bg-blue-600 dark:bg-blue-900 overflow-hidden transition-colors duration-300">
           <div className="container mx-auto px-4 relative z-10">
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={fastTransition}
-              className="max-w-3xl mx-auto text-center text-white"
+              className="cns-hero__content mx-auto text-center text-white"
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Manutenção Profissional para seu Negócio
               </h1>
               <p className="text-xl md:text-2xl mb-10 text-blue-100 dark:text-blue-200">
-                Serviços especializados em elétrica, eletrônica e hidráulica no Distrito Federal
+                Especialistas em elétrica, eletrônica, hidráulica e engenharia clínica no Distrito Federal
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-6 h-6" /> WhatsApp
-                </a>
-                <Link
-                  href="/#servicos"
-                  className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center justify-center"
-                >
-                  Nossos Serviços
-                </Link>
+              <div className="cns-hero__cta-row justify-center">
+                <UrgentMaintenanceCta />
+                <ExpressQuoteCta />
+                <MedicalEngineeringCta />
               </div>
             </motion.div>
           </div>
@@ -92,14 +82,7 @@ export default function Home() {
                 <p className="text-blue-800 dark:text-blue-200 mb-6">
                   Nossos especialistas estão prontos para avaliar sua necessidade e propor a melhor solução.
                 </p>
-                <a
-                  href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar uma visita técnica com a Cnsousatec."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-center block transition-colors duration-200"
-                >
-                  Falar com Especialista
-                </a>
+                <UrgentMaintenanceCta className="w-full" />
               </div>
             </div>
           </div>
@@ -204,16 +187,7 @@ export default function Home() {
                   <p className="text-gray-600 dark:text-gray-300 mb-10 text-lg leading-relaxed">
                     Prefere um atendimento instantâneo? Clique no botão abaixo e fale diretamente com nossa equipe técnica pelo WhatsApp.
                   </p>
-                  <motion.a
-                    whileHover={{ scale: 1.05, translateY: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-6 px-8 rounded-3xl text-xl shadow-2xl shadow-green-500/30 transition-all flex items-center justify-center gap-3 group/btn"
-                  >
-                    <Phone className="w-6 h-6 group-hover/btn:rotate-12 transition-transform" /> Iniciar Conversa
-                  </motion.a>
+                  <ExpressQuoteCta className="w-full py-6 rounded-3xl text-xl shadow-2xl shadow-green-500/30" />
                   <p className="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">⚡ Resposta média em menos de 15 minutos</p>
                 </div>
               </motion.div>

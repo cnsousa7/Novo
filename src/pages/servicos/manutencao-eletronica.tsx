@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import Footer from '../../components/Footer';
 import { motion } from 'framer-motion';
 import { Cpu, CheckCircle, Phone, Wrench, Zap, Settings } from 'lucide-react';
+import { ExpressQuoteCta, UrgentMaintenanceCta, MedicalEngineeringCta } from '../../components/cro/WhatsAppCta';
 
 export default function ManutencaoEletronica() {
   return (
@@ -45,15 +46,10 @@ export default function ManutencaoEletronica() {
               <p className="text-xl text-purple-100 mb-8">
                 Reparo e manutenção de equipamentos eletrônicos, sistemas de automação e controle industrial no Distrito Federal
               </p>
-              <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção eletrônica com a Cnsousatec."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Solicitar Orçamento
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <ExpressQuoteCta />
+                <MedicalEngineeringCta />
+              </div>
             </motion.div>
           </div>
         </section>
@@ -235,15 +231,10 @@ export default function ManutencaoEletronica() {
               <p className="text-xl mb-8 text-purple-100">
                 Entre em contato agora e receba um orçamento personalizado
               </p>
-              <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção eletrônica com a Cnsousatec."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Falar com Especialista
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <UrgentMaintenanceCta />
+                <MedicalEngineeringCta />
+              </div>
             </motion.div>
           </div>
         </section>

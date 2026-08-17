@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import Footer from '../../components/Footer';
 import { motion } from 'framer-motion';
 import { Wrench, CheckCircle, Phone, Droplet, Shield, Clock } from 'lucide-react';
+import { ExpressQuoteCta, UrgentMaintenanceCta } from '../../components/cro/WhatsAppCta';
 
 export default function ManutencaoHidraulica() {
   return (
@@ -45,15 +46,7 @@ export default function ManutencaoHidraulica() {
               <p className="text-xl text-cyan-100 mb-8">
                 Serviços completos em sistemas hidráulicos, tubulações e instalações prediais para empresas e condomínios no Distrito Federal
               </p>
-              <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica com a Cnsousatec."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Solicitar Orçamento
-              </a>
+              <ExpressQuoteCta />
             </motion.div>
           </div>
         </section>
@@ -118,9 +111,9 @@ export default function ManutencaoHidraulica() {
                   <div className="flex gap-3">
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">Manutenção de Caixas d'Água</h3>
+                      <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">Manutenção de Caixas d&apos;Água</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Limpeza, higienização e reparo de caixas d'água e reservatórios.
+                        Limpeza, higienização e reparo de caixas d&apos;água e reservatórios.
                       </p>
                     </div>
                   </div>
@@ -185,7 +178,7 @@ export default function ManutencaoHidraulica() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  A manutenção hidráulica predial é essencial para garantir o bom funcionamento das instalações de água e esgoto em edifícios comerciais, condomínios e empresas. Problemas como vazamentos, entupimentos e baixa pressão de água podem afetar o conforto dos usuários e causar danos à estrutura do imóvel. A Cnsousatec oferece planos de manutenção preventiva que incluem inspeções periódicas, limpeza de caixas d'água, verificação de bombas e registros, e identificação precoce de problemas.
+                  A manutenção hidráulica predial é essencial para garantir o bom funcionamento das instalações de água e esgoto em edifícios comerciais, condomínios e empresas. Problemas como vazamentos, entupimentos e baixa pressão de água podem afetar o conforto dos usuários e causar danos à estrutura do imóvel. A Cnsousatec oferece planos de manutenção preventiva que incluem inspeções periódicas, limpeza de caixas d&apos;água, verificação de bombas e registros, e identificação precoce de problemas.
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -235,15 +228,7 @@ export default function ManutencaoHidraulica() {
               <p className="text-xl mb-8 text-cyan-100">
                 Entre em contato agora e receba um orçamento personalizado
               </p>
-              <a
-                href="https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento para manutenção hidráulica com a Cnsousatec."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Falar com Especialista
-              </a>
+              <UrgentMaintenanceCta />
             </motion.div>
           </div>
         </section>

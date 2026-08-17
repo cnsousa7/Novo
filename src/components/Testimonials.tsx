@@ -73,7 +73,7 @@ export default function Testimonials({ uf = 'DF' }: TestimonialProps) {
               </div>
 
               <p className="text-gray-700 dark:text-gray-300 text-lg mb-6 italic">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </p>
 
               <div>

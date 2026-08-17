@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { Moon, Sun, Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { getGeneralWhatsAppUrl } from './cro/whatsapp';
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
@@ -11,6 +12,8 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
+    // Necessário para evitar divergência de hidratação do next-themes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -20,7 +23,7 @@ export default function Header() {
     setTheme(newTheme);
   };
 
-  const whatsappUrl = "https://api.whatsapp.com/send?phone=5561992743428&text=Olá! Gostaria de solicitar um orçamento com a Cnsousatec.";
+  const whatsappUrl = getGeneralWhatsAppUrl();
   const phoneUrl = "tel:+5561992743428";
 
   return (

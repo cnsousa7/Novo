@@ -1,5 +1,7 @@
 import '@/styles/globals.css';
+import '@/styles/cnsousatec-cro.css';
 import type { AppProps } from 'next/app';
+import { WhatsAppFloatingButton } from '../components/cro/WhatsAppFloatingButton';
 import { ThemeProvider } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -11,6 +13,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Necessário para evitar divergência de hidratação do next-themes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     initGA();
   }, []);
@@ -36,6 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {mounted ? (
         <>
           <Component {...pageProps} />
+          <WhatsAppFloatingButton />
           <SpeedInsights />
         </>
       ) : (

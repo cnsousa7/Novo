@@ -9,6 +9,7 @@ import Testimonials from '../../components/Testimonials';
 import ServicesSection from '../../components/ServicesSection';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, CheckCircle } from 'lucide-react';
+import { getLocalityWhatsAppUrl } from '../../components/cro/whatsapp';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
 import FAQ from '../../components/FAQ';
@@ -80,13 +81,13 @@ export default function LocalPage({ servico, servicoNome, servicoBase, localidad
                 Atendimento especializado em {servicoNome} para residências, empresas e condomínios em {localidadeNome} - {uf}. Foco: {foco}
               </p>
               <a
-                href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! ${whatsappMsg} com a Cnsousatec.`}
+                href={getLocalityWhatsAppUrl(localidadeNome, servicoNome)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                Solicitar Orçamento
+                Solicitar Orçamento Expresso
               </a>
             </motion.div>
           </div>
@@ -200,13 +201,13 @@ export default function LocalPage({ servico, servicoNome, servicoBase, localidad
                     Entre em contato agora mesmo e agende uma visita técnica.
                   </p>
                   <a
-                    href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! ${whatsappMsg} com a Cnsousatec.`}
+                    href={getLocalityWhatsAppUrl(localidadeNome, servicoNome)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:underline"
                   >
                     <Phone className="w-5 h-5" />
-                    Solicitar Atendimento em {localidadeNome}
+                    Acionar Manutenção 24h em {localidadeNome}
                   </a>
                 </div>
               </motion.div>
@@ -250,13 +251,13 @@ export default function LocalPage({ servico, servicoNome, servicoBase, localidad
                   Entre em contato agora e receba um orçamento personalizado
                 </p>
                 <a
-                  href={`https://api.whatsapp.com/send?phone=5561992743428&text=Olá! ${whatsappMsg} com a Cnsousatec.`}
+                  href={getLocalityWhatsAppUrl(localidadeNome, servicoNome)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                Falar com Especialista
+                Solicitar Orçamento Expresso
               </a>
             </motion.div>
           </div>
