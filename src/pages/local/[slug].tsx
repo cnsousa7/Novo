@@ -14,6 +14,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
 import FAQ from '../../components/FAQ';
 import LocalBusinessSchema from '../../components/LocalBusinessSchema';
+import { trackWhatsAppClick } from '../../lib/analytics';
 
 interface LocalPageProps {
   servico: string;
@@ -95,6 +96,7 @@ export default function LocalPage({ servico, servicoNome, servicoBase, localidad
                 href={getLocalityWhatsAppUrl(localidadeNome, servicoNome)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick({ placement: 'locality_page', service: servicoNome, locality: localidadeNome, label: 'Solicitar Orçamento Expresso' })}
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
@@ -215,6 +217,7 @@ export default function LocalPage({ servico, servicoNome, servicoBase, localidad
                     href={getLocalityWhatsAppUrl(localidadeNome, servicoNome)}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick({ placement: 'locality_page', service: servicoNome, locality: localidadeNome, label: 'Acionar Manutenção 24h' })}
                     className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:underline"
                   >
                     <Phone className="w-5 h-5" />
@@ -265,6 +268,7 @@ export default function LocalPage({ servico, servicoNome, servicoBase, localidad
                   href={getLocalityWhatsAppUrl(localidadeNome, servicoNome)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick({ placement: 'locality_page', service: servicoNome, locality: localidadeNome, label: 'Solicitar Orçamento Expresso' })}
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
