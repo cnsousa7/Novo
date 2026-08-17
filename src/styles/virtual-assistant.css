@@ -1,0 +1,260 @@
+.virtual-assistant-trigger {
+  position: fixed;
+  right: 1.25rem;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom));
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #14532d, #16a34a);
+  box-shadow: 0 0.75rem 2rem rgb(20 83 45 / 0.32);
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.virtual-assistant-trigger:hover,
+.virtual-assistant-trigger:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2.2rem rgb(20 83 45 / 0.4);
+  filter: brightness(1.05);
+}
+
+.virtual-assistant-trigger:focus-visible,
+.virtual-assistant-close:focus-visible,
+.virtual-assistant-options button:focus-visible,
+.virtual-assistant-whatsapp:focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: 3px;
+}
+
+.virtual-assistant-panel {
+  position: fixed;
+  right: 1.25rem;
+  bottom: calc(5.75rem + env(safe-area-inset-bottom));
+  z-index: 91;
+  display: flex;
+  flex-direction: column;
+  width: min(23rem, calc(100vw - 2rem));
+  max-height: min(39rem, calc(100vh - 7rem));
+  overflow: hidden;
+  border: 1px solid rgb(148 163 184 / 0.34);
+  border-radius: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 1.5rem 4rem rgb(15 23 42 / 0.25);
+  animation: virtual-assistant-fade-in 220ms ease-out both;
+}
+
+.virtual-assistant-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.15rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+}
+
+.virtual-assistant-header > div {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.virtual-assistant-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.virtual-assistant-header p {
+  margin: 0.25rem 0 0;
+  color: #dbeafe;
+  font-size: 0.75rem;
+}
+
+.virtual-assistant-status {
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #4ade80;
+  box-shadow: 0 0 0 0.2rem rgb(74 222 128 / 0.2);
+}
+
+.virtual-assistant-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  background: rgb(255 255 255 / 0.12);
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+
+.virtual-assistant-close:hover {
+  background: rgb(255 255 255 / 0.24);
+}
+
+.virtual-assistant-messages {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 10rem;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+
+.virtual-assistant-message {
+  max-width: 88%;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  animation: virtual-assistant-message-in 220ms ease-out both;
+}
+
+.virtual-assistant-message--bot {
+  align-self: flex-start;
+  border-bottom-left-radius: 0.25rem;
+  color: #1e293b;
+  background: #ffffff;
+  box-shadow: 0 0.25rem 0.75rem rgb(15 23 42 / 0.07);
+}
+
+.virtual-assistant-message--user {
+  align-self: flex-end;
+  border-bottom-right-radius: 0.25rem;
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.virtual-assistant-actions {
+  padding: 0.85rem 1rem 1rem;
+  background: #ffffff;
+}
+
+.virtual-assistant-options {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.virtual-assistant-options button,
+.virtual-assistant-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.7rem;
+  color: #1d4ed8;
+  background: #eff6ff;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 750;
+  text-align: center;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.virtual-assistant-options button:hover {
+  color: #ffffff;
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.virtual-assistant-whatsapp {
+  gap: 0.5rem;
+  border-color: #16a34a;
+  color: #ffffff;
+  background: #16a34a;
+  text-decoration: none;
+  box-shadow: 0 0.5rem 1rem rgb(22 163 74 / 0.22);
+}
+
+.virtual-assistant-whatsapp:hover {
+  color: #ffffff;
+  background: #15803d;
+  transform: translateY(-1px);
+}
+
+@keyframes virtual-assistant-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes virtual-assistant-message-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .virtual-assistant-trigger {
+    right: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    min-width: 3.25rem;
+    width: 3.25rem;
+    padding: 0.8rem;
+    justify-content: center;
+  }
+
+  .virtual-assistant-trigger__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .virtual-assistant-panel {
+    right: 0.75rem;
+    bottom: calc(5rem + env(safe-area-inset-bottom));
+    width: calc(100vw - 1.5rem);
+    max-height: calc(100vh - 6rem);
+    border-radius: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .virtual-assistant-panel,
+  .virtual-assistant-message {
+    animation: none;
+  }
+
+  .virtual-assistant-trigger,
+  .virtual-assistant-options button,
+  .virtual-assistant-whatsapp {
+    transition: none;
+  }
+}
