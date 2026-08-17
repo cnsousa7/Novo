@@ -57,13 +57,25 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    return Object.entries(legacyLocalityRedirects).flatMap(([legacySlug, canonicalSlug]) =>
-      serviceSlugs.map((serviceSlug) => ({
-        source: `/local/${serviceSlug}-${legacySlug}`,
-        destination: `/local/${serviceSlug}-${canonicalSlug}`,
-        permanent: true,
-      })),
+    const generatedLegacyRedirects = Object.entries(legacyLocalityRedirects).flatMap(
+      ([legacySlug, canonicalSlug]) =>
+        serviceSlugs.map((serviceSlug) => ({
+          source: `/local/${serviceSlug}-${legacySlug}`,
+          destination: `/local/${serviceSlug}-${canonicalSlug}`,
+          permanent: true,
+        })),
     );
+
+    // Regra literal para a URL específica reportada pelo GSC, preservada à frente
+    // da lista gerada para garantir a prioridade no roteamento da Vercel.
+    return [
+      {
+        source: '/local/manutencao-hidraulica-jardim-barragem',
+        destination: '/local/manutencao-hidraulica-jardim-da-barragem-i',
+        permanent: true,
+      },
+      ...generatedLegacyRedirects,
+    ];
   },
 };
 
