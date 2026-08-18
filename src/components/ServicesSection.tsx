@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Zap, Shield, Clock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ServicesSectionProps {
   uf?: 'DF' | 'GO';
@@ -61,11 +62,13 @@ export default function ServicesSection({ uf = 'DF' }: ServicesSectionProps) {
               transition={{ duration: 0.3, delay: index * 0.05 }}
               className="cns-service-card bg-white dark:bg-gray-900 rounded-xl shadow-lg transition-all duration-200 border border-gray-100 dark:border-gray-700 overflow-hidden"
             >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
               <div className="p-8">
