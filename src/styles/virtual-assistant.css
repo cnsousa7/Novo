@@ -263,6 +263,109 @@
   transform: translateY(-1px);
 }
 
+.virtual-assistant-photo-step {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.virtual-assistant-photo-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.virtual-assistant-photo-upload,
+.virtual-assistant-photo-continue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid #2563eb;
+  border-radius: 0.7rem;
+  color: #ffffff;
+  background: #2563eb;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.virtual-assistant-photo-continue {
+  border-color: #16a34a;
+  background: #16a34a;
+}
+
+.virtual-assistant-photo-upload:hover:not(:disabled),
+.virtual-assistant-photo-continue:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.virtual-assistant-photo-continue:hover {
+  background: #15803d;
+}
+
+.virtual-assistant-photo-upload:disabled,
+.virtual-assistant-photo-skip:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.virtual-assistant-photo-help,
+.virtual-assistant-photo-error,
+.virtual-assistant-photo-success {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.virtual-assistant-photo-help {
+  color: #64748b;
+}
+
+.virtual-assistant-photo-error {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.virtual-assistant-photo-success {
+  color: #166534;
+  font-weight: 700;
+}
+
+.virtual-assistant-photo-actions {
+  display: grid;
+}
+
+.virtual-assistant-photo-skip {
+  justify-self: center;
+  padding: 0.25rem;
+  border: 0;
+  color: #475569;
+  background: transparent;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.virtual-assistant-photo-skip:hover:not(:disabled) {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 0.18rem;
+}
+
+.virtual-assistant-spin {
+  animation: virtual-assistant-spin 700ms linear infinite;
+}
+
 .virtual-assistant-complete {
   display: grid;
   gap: 0.65rem;
@@ -290,6 +393,12 @@
 
 .virtual-assistant-summary span {
   font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.virtual-assistant-summary small {
+  color: #15803d;
+  font-size: 0.68rem;
   font-weight: 700;
 }
 
@@ -324,6 +433,12 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes virtual-assistant-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -365,6 +480,8 @@
   .virtual-assistant-trigger,
   .virtual-assistant-options button,
   .virtual-assistant-whatsapp,
+  .virtual-assistant-photo-upload,
+  .virtual-assistant-photo-continue,
   .virtual-assistant-progress i {
     transition: none;
   }

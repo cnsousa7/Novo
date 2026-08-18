@@ -1,10 +1,15 @@
-import { useMemo, useState } from 'react';
-import { ArrowRight, CheckCircle2, MessageCircle, RotateCcw, Send, X } from 'lucide-react';
+import { type ChangeEvent, useMemo, useRef, useState } from 'react';
+import { ArrowRight, CheckCircle2, ImagePlus, LoaderCircle, MessageCircle, RotateCcw, Send, X } from 'lucide-react';
+import { upload } from '@vercel/blob/client';
 import {
   trackChatbotAvailabilitySelected,
   trackChatbotIssueSelected,
   trackChatbotLocationSelected,
   trackChatbotOpen,
+  trackChatbotPhotoSkipped,
+  trackChatbotPhotoUploaded,
+  trackChatbotPhotoUploadFailed,
+  trackChatbotPhotoUploadStarted,
   trackChatbotPropertySelected,
   trackChatbotRestart,
   trackChatbotServiceSelected,
@@ -14,6 +19,8 @@ import {
 } from '../lib/analytics';
 
 const WHATSAPP_NUMBER = '5561992743428';
+const MAX_PHOTO_SIZE_BYTES = 5 * 1024 * 1024;
+const ALLOWED_PHOTO_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 
 const serviceOptions = [
   {
@@ -123,7 +130,7 @@ type PropertyId = (typeof propertyOptions)[number]['id'];
 type IssueId = (typeof issueOptions)[number]['id'];
 type UrgencyId = (typeof urgencyOptions)[number]['id'];
 type AvailabilityId = (typeof availabilityOptions)[number]['id'];
-type ConversationStep = 'service' | 'location' | 'property' | 'issue' | 'urgency' | 'availability' | 'done';
+type ConversationStep = 'service' | 'location' | 'property' | 'issue' | 'urgency' | 'availability' | 'photo' | 'done';
 type ChatMessage = { id: string; sender: 'bot' | 'user'; text: string };
 
 const initialMessage: ChatMessage = {
@@ -139,6 +146,7 @@ function createWhatsAppUrl(
   issue: string,
   urgency: string,
   availability: string,
+  photoUrl?: string,
 ) {
   const message = [
     'Olá! Vim pelo assistente virtual da CNSOUSATEC.',
@@ -148,6 +156,7 @@ function createWhatsAppUrl(
     `Situação: ${issue}.`,
     `Prioridade: ${urgency}.`,
     `Melhor disponibilidade: ${availability}.`,
+    photoUrl ? `Foto técnica enviada: ${photoUrl}` : 'Foto técnica: não enviada.',
     'Gostaria de acionar um especialista para este atendimento.',
   ].join(' ');
 
@@ -181,7 +190,12 @@ export default function VirtualAssistant() {
   const [issue, setIssue] = useState<IssueId | null>(null);
   const [urgency, setUrgency] = useState<UrgencyId | null>(null);
   const [availability, setAvailability] = useState<AvailabilityId | null>(null);
+  const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+  const [photoName, setPhotoName] = useState<string | null>(null);
+  const [photoError, setPhotoError] = useState<string | null>(null);
+  const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([initialMessage]);
+  const photoInputRef = useRef<HTMLInputElement>(null);
 
   const selectedServiceLabel = useMemo(
     () => serviceOptions.find((option) => option.id === service)?.label || '',
@@ -215,7 +229,8 @@ export default function VirtualAssistant() {
     issue: 4,
     urgency: 5,
     availability: 6,
-    done: 6,
+    photo: 7,
+    done: 7,
   }[step];
 
   const chooseService = (nextService: ServiceId) => {
@@ -314,16 +329,103 @@ export default function VirtualAssistant() {
 
     trackChatbotAvailabilitySelected(selectedServiceLabel, selected.label);
     setAvailability(nextAvailability);
-    setStep('done');
+    setStep('photo');
     setMessages((current) => [
       ...current,
       { id: `user-availability-${nextAvailability}`, sender: 'user', text: selected.label },
       {
-        id: 'bot-transfer',
+        id: 'bot-photo',
         sender: 'bot',
-        text: 'Pronto. Seu pedido foi organizado com as informações que aceleram a triagem. Toque abaixo para falar com um especialista da CNSOUSATEC.',
+        text: 'Se puder, envie uma foto técnica do problema. Ela é opcional, mas pode ajudar o especialista a chegar mais preparado.',
       },
     ]);
+  };
+
+  const completeConversation = (choice: 'photo' | 'skip') => {
+    setStep('done');
+    setMessages((current) => [
+      ...current,
+      ...(choice === 'skip' ? [{ id: 'user-photo-skip', sender: 'user' as const, text: 'Continuar sem foto' }] : []),
+      {
+        id: 'bot-transfer',
+        sender: 'bot' as const,
+        text: photoUrl
+          ? 'Foto técnica anexada. Seu pedido foi organizado com as informações que aceleram a triagem. Toque abaixo para falar com um especialista.'
+          : 'Pronto. Seu pedido foi organizado com as informações que aceleram a triagem. Toque abaixo para falar com um especialista da CNSOUSATEC.',
+      },
+    ]);
+  };
+
+  const handlePhotoUpload = async (file: File) => {
+    setPhotoError(null);
+    if (!ALLOWED_PHOTO_TYPES.includes(file.type)) {
+      const error = 'Envie uma imagem em JPEG, PNG ou WebP.';
+      setPhotoError(error);
+      trackChatbotPhotoUploadFailed(selectedServiceLabel, 'unsupported_file_type');
+      return;
+    }
+
+    if (file.size > MAX_PHOTO_SIZE_BYTES) {
+      const error = 'A foto deve ter no máximo 5 MB.';
+      setPhotoError(error);
+      trackChatbotPhotoUploadFailed(selectedServiceLabel, 'file_too_large');
+      return;
+    }
+
+    const extension = file.name.split('.').pop()?.toLowerCase() || 'jpg';
+    const safeFilename = file.name
+      .replace(/\.[^/.]+$/, '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-zA-Z0-9_-]/g, '-')
+      .replace(/-+/g, '-')
+      .slice(0, 50) || 'evidencia';
+
+    setIsUploadingPhoto(true);
+    trackChatbotPhotoUploadStarted(selectedServiceLabel, selectedUrgencyLabel);
+
+    try {
+      const blob = await upload(`chatbot-evidencias/${Date.now()}-${safeFilename}.${extension}`, file, {
+        access: 'public',
+        handleUploadUrl: '/api/upload-evidence',
+        contentType: file.type,
+        clientPayload: JSON.stringify({
+          source: 'chatbot',
+          service: selectedServiceLabel,
+          urgency: selectedUrgencyLabel,
+        }),
+      });
+
+      setPhotoUrl(blob.url);
+      setPhotoName(file.name);
+      trackChatbotPhotoUploaded(selectedServiceLabel, selectedUrgencyLabel);
+      setMessages((current) => [
+        ...current,
+        { id: `user-photo-${Date.now()}`, sender: 'user', text: `Foto anexada: ${file.name}` },
+        {
+          id: 'bot-photo-confirmed',
+          sender: 'bot',
+          text: 'Foto recebida. O link será incluído no resumo para que a equipe técnica possa consultar a evidência.',
+        },
+      ]);
+    } catch (error) {
+      console.error('chatbot_photo_upload_failed', error);
+      setPhotoError('Não foi possível enviar a foto agora. Você pode continuar sem foto ou tentar novamente.');
+      trackChatbotPhotoUploadFailed(selectedServiceLabel, 'upload_error');
+    } finally {
+      setIsUploadingPhoto(false);
+    }
+  };
+
+  const onPhotoChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    event.target.value = '';
+    if (file) void handlePhotoUpload(file);
+  };
+
+  const skipPhoto = () => {
+    trackChatbotPhotoSkipped(selectedServiceLabel, selectedUrgencyLabel);
+    completeConversation('skip');
   };
 
   const restartConversation = () => {
@@ -335,6 +437,10 @@ export default function VirtualAssistant() {
     setIssue(null);
     setUrgency(null);
     setAvailability(null);
+    setPhotoUrl(null);
+    setPhotoName(null);
+    setPhotoError(null);
+    setIsUploadingPhoto(false);
     setMessages([initialMessage]);
   };
 
@@ -346,6 +452,7 @@ export default function VirtualAssistant() {
       selectedIssueLabel,
       selectedUrgencyLabel,
       selectedAvailabilityLabel,
+      photoUrl || undefined,
     )
     : '#';
 
@@ -390,10 +497,10 @@ export default function VirtualAssistant() {
             </button>
           </header>
 
-          <div className="virtual-assistant-progress" aria-label={`Etapa ${stepNumber} de 6`}>
-            <span>Etapa {stepNumber} de 6</span>
+          <div className="virtual-assistant-progress" aria-label={`Etapa ${stepNumber} de 7`}>
+            <span>Etapa {stepNumber} de 7</span>
             <div aria-hidden="true">
-              <i style={{ width: `${Math.min(stepNumber, 6) * (100 / 6)}%` }} />
+              <i style={{ width: `${Math.min(stepNumber, 7) * (100 / 7)}%` }} />
             </div>
           </div>
 
@@ -409,12 +516,7 @@ export default function VirtualAssistant() {
             {step === 'service' && (
               <div className="virtual-assistant-options" aria-label="Escolha o serviço necessário">
                 {serviceOptions.map((option) => (
-                  <OptionButton
-                    key={option.id}
-                    label={option.label}
-                    description={option.description}
-                    onClick={() => chooseService(option.id)}
-                  />
+                  <OptionButton key={option.id} label={option.label} description={option.description} onClick={() => chooseService(option.id)} />
                 ))}
               </div>
             )}
@@ -422,12 +524,7 @@ export default function VirtualAssistant() {
             {step === 'location' && (
               <div className="virtual-assistant-options" aria-label="Escolha a região do atendimento">
                 {locationOptions.map((option) => (
-                  <OptionButton
-                    key={option.id}
-                    label={option.label}
-                    description={option.description}
-                    onClick={() => chooseLocation(option.id)}
-                  />
+                  <OptionButton key={option.id} label={option.label} description={option.description} onClick={() => chooseLocation(option.id)} />
                 ))}
               </div>
             )}
@@ -435,12 +532,7 @@ export default function VirtualAssistant() {
             {step === 'property' && (
               <div className="virtual-assistant-options" aria-label="Escolha o tipo de ambiente">
                 {propertyOptions.map((option) => (
-                  <OptionButton
-                    key={option.id}
-                    label={option.label}
-                    description={option.description}
-                    onClick={() => chooseProperty(option.id)}
-                  />
+                  <OptionButton key={option.id} label={option.label} description={option.description} onClick={() => chooseProperty(option.id)} />
                 ))}
               </div>
             )}
@@ -448,12 +540,7 @@ export default function VirtualAssistant() {
             {step === 'issue' && (
               <div className="virtual-assistant-options" aria-label="Descreva a situação">
                 {issueOptions.map((option) => (
-                  <OptionButton
-                    key={option.id}
-                    label={option.label}
-                    description={option.description}
-                    onClick={() => chooseIssue(option.id)}
-                  />
+                  <OptionButton key={option.id} label={option.label} description={option.description} onClick={() => chooseIssue(option.id)} />
                 ))}
               </div>
             )}
@@ -461,12 +548,7 @@ export default function VirtualAssistant() {
             {step === 'urgency' && (
               <div className="virtual-assistant-options" aria-label="Escolha a prioridade">
                 {urgencyOptions.map((option) => (
-                  <OptionButton
-                    key={option.id}
-                    label={option.label}
-                    description={option.description}
-                    onClick={() => chooseUrgency(option.id)}
-                  />
+                  <OptionButton key={option.id} label={option.label} description={option.description} onClick={() => chooseUrgency(option.id)} />
                 ))}
               </div>
             )}
@@ -479,6 +561,45 @@ export default function VirtualAssistant() {
               </div>
             )}
 
+            {step === 'photo' && (
+              <div className="virtual-assistant-photo-step">
+                <input
+                  ref={photoInputRef}
+                  className="virtual-assistant-photo-input"
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  onChange={onPhotoChange}
+                  disabled={isUploadingPhoto}
+                />
+                <button
+                  type="button"
+                  className="virtual-assistant-photo-upload"
+                  disabled={isUploadingPhoto}
+                  onClick={() => photoInputRef.current?.click()}
+                >
+                  {isUploadingPhoto ? <LoaderCircle className="virtual-assistant-spin" size={19} aria-hidden="true" /> : <ImagePlus size={19} aria-hidden="true" />}
+                  {isUploadingPhoto ? 'Enviando foto...' : photoUrl ? 'Enviar outra foto' : 'Adicionar foto do problema'}
+                </button>
+                <p className="virtual-assistant-photo-help">
+                  Opcional. JPEG, PNG ou WebP de até 5 MB. Envie apenas a área técnica: não inclua pessoas, pacientes, documentos ou dados pessoais.
+                </p>
+                {photoError && <p className="virtual-assistant-photo-error" role="alert">{photoError}</p>}
+                {photoUrl && <p className="virtual-assistant-photo-success">Foto anexada: {photoName}</p>}
+                <div className="virtual-assistant-photo-actions">
+                  {photoUrl ? (
+                    <button type="button" className="virtual-assistant-photo-continue" onClick={() => completeConversation('photo')}>
+                      Continuar com a foto
+                      <ArrowRight size={17} aria-hidden="true" />
+                    </button>
+                  ) : (
+                    <button type="button" className="virtual-assistant-photo-skip" disabled={isUploadingPhoto} onClick={skipPhoto}>
+                      Continuar sem foto
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+
             {step === 'done' && (
               <div className="virtual-assistant-complete">
                 <div className="virtual-assistant-summary">
@@ -486,6 +607,7 @@ export default function VirtualAssistant() {
                   <div>
                     <strong>Resumo do atendimento</strong>
                     <span>{selectedServiceLabel} · {selectedLocationLabel} · {selectedUrgencyLabel}</span>
+                    <small>{photoUrl ? 'Foto técnica anexada ao encaminhamento.' : 'Sem foto técnica anexada.'}</small>
                   </div>
                 </div>
                 <a
@@ -494,12 +616,7 @@ export default function VirtualAssistant() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
-                    trackChatbotWhatsAppClick(
-                      selectedServiceLabel,
-                      selectedUrgencyLabel,
-                      selectedIssueLabel,
-                      selectedAvailabilityLabel,
-                    );
+                    trackChatbotWhatsAppClick(selectedServiceLabel, selectedUrgencyLabel, selectedIssueLabel, selectedAvailabilityLabel);
                     trackWhatsAppClick({
                       placement: 'chatbot',
                       service: selectedServiceLabel,

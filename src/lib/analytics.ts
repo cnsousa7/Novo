@@ -101,6 +101,38 @@ export const trackChatbotAvailabilitySelected = (service: string, availability: 
   });
 };
 
+export const trackChatbotPhotoUploadStarted = (service: string, urgency: string) => {
+  logEvent('chatbot_photo_upload_started', {
+    component: 'virtual_assistant',
+    service,
+    urgency,
+  });
+};
+
+export const trackChatbotPhotoUploaded = (service: string, urgency: string) => {
+  logEvent('chatbot_photo_uploaded', {
+    component: 'virtual_assistant',
+    service,
+    urgency,
+  });
+};
+
+export const trackChatbotPhotoUploadFailed = (service: string, reason: string) => {
+  logEvent('chatbot_photo_upload_failed', {
+    component: 'virtual_assistant',
+    service,
+    reason,
+  });
+};
+
+export const trackChatbotPhotoSkipped = (service: string, urgency: string) => {
+  logEvent('chatbot_photo_skipped', {
+    component: 'virtual_assistant',
+    service,
+    urgency,
+  });
+};
+
 export const trackChatbotRestart = () => {
   logEvent('chatbot_restart', { component: 'virtual_assistant' });
 };
