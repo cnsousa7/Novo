@@ -107,7 +107,7 @@ export default function VirtualAssistant() {
         }}
       >
         {isOpen ? <X size={24} aria-hidden="true" /> : <MessageCircle size={25} aria-hidden="true" />}
-        <span className="virtual-assistant-trigger__label">Atendimento</span>
+        <span className="virtual-assistant-trigger__label">Assistente virtual</span>
       </button>
 
       {isOpen && (
