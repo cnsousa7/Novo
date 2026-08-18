@@ -3,7 +3,9 @@ import { ArrowRight, CheckCircle2, MessageCircle, RotateCcw, Send, X } from 'luc
 import {
   trackChatbotAvailabilitySelected,
   trackChatbotIssueSelected,
+  trackChatbotLocationSelected,
   trackChatbotOpen,
+  trackChatbotPropertySelected,
   trackChatbotRestart,
   trackChatbotServiceSelected,
   trackChatbotUrgencySelected,
@@ -28,6 +30,47 @@ const serviceOptions = [
     id: 'eletronica',
     label: 'Engenharia clínica',
     description: 'Equipamentos médico-hospitalares e suporte técnico especializado.',
+  },
+] as const;
+
+const locationOptions = [
+  {
+    id: 'df',
+    label: 'Brasília e Distrito Federal',
+    description: 'Atendimento nas regiões administrativas do DF.',
+  },
+  {
+    id: 'entorno',
+    label: 'Entorno do DF',
+    description: 'Águas Lindas e demais cidades atendidas na região.',
+  },
+  {
+    id: 'confirmar',
+    label: 'Quero confirmar minha região',
+    description: 'A equipe verifica a cobertura rapidamente no WhatsApp.',
+  },
+] as const;
+
+const propertyOptions = [
+  {
+    id: 'empresa',
+    label: 'Empresa, comércio ou escritório',
+    description: 'Ambiente de trabalho, loja, indústria ou operação comercial.',
+  },
+  {
+    id: 'condominio',
+    label: 'Condomínio ou área comum',
+    description: 'Prédio, portaria, garagem, área técnica ou administração.',
+  },
+  {
+    id: 'saude',
+    label: 'Clínica, hospital ou laboratório',
+    description: 'Ambiente de saúde com necessidade de suporte especializado.',
+  },
+  {
+    id: 'residencia',
+    label: 'Residência',
+    description: 'Casa, apartamento ou imóvel residencial.',
   },
 ] as const;
 
@@ -75,20 +118,24 @@ const availabilityOptions = [
 ] as const;
 
 type ServiceId = (typeof serviceOptions)[number]['id'];
+type LocationId = (typeof locationOptions)[number]['id'];
+type PropertyId = (typeof propertyOptions)[number]['id'];
 type IssueId = (typeof issueOptions)[number]['id'];
 type UrgencyId = (typeof urgencyOptions)[number]['id'];
 type AvailabilityId = (typeof availabilityOptions)[number]['id'];
-type ConversationStep = 'service' | 'issue' | 'urgency' | 'availability' | 'done';
+type ConversationStep = 'service' | 'location' | 'property' | 'issue' | 'urgency' | 'availability' | 'done';
 type ChatMessage = { id: string; sender: 'bot' | 'user'; text: string };
 
 const initialMessage: ChatMessage = {
   id: 'welcome',
   sender: 'bot',
-  text: 'Olá! Sou o assistente virtual da CNSOUSATEC. Vou entender sua necessidade em poucos passos e encaminhar você à equipe certa.',
+  text: 'Olá! Sou o assistente virtual da CNSOUSATEC. Em menos de um minuto, vou organizar seu pedido para você falar com o especialista certo.',
 };
 
 function createWhatsAppUrl(
   service: string,
+  location: string,
+  property: string,
   issue: string,
   urgency: string,
   availability: string,
@@ -96,6 +143,8 @@ function createWhatsAppUrl(
   const message = [
     'Olá! Vim pelo assistente virtual da CNSOUSATEC.',
     `Serviço: ${service}.`,
+    `Região: ${location}.`,
+    `Ambiente: ${property}.`,
     `Situação: ${issue}.`,
     `Prioridade: ${urgency}.`,
     `Melhor disponibilidade: ${availability}.`,
@@ -127,6 +176,8 @@ export default function VirtualAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState<ConversationStep>('service');
   const [service, setService] = useState<ServiceId | null>(null);
+  const [location, setLocation] = useState<LocationId | null>(null);
+  const [property, setProperty] = useState<PropertyId | null>(null);
   const [issue, setIssue] = useState<IssueId | null>(null);
   const [urgency, setUrgency] = useState<UrgencyId | null>(null);
   const [availability, setAvailability] = useState<AvailabilityId | null>(null);
@@ -135,6 +186,14 @@ export default function VirtualAssistant() {
   const selectedServiceLabel = useMemo(
     () => serviceOptions.find((option) => option.id === service)?.label || '',
     [service],
+  );
+  const selectedLocationLabel = useMemo(
+    () => locationOptions.find((option) => option.id === location)?.label || '',
+    [location],
+  );
+  const selectedPropertyLabel = useMemo(
+    () => propertyOptions.find((option) => option.id === property)?.label || '',
+    [property],
   );
   const selectedIssueLabel = useMemo(
     () => issueOptions.find((option) => option.id === issue)?.label || '',
@@ -149,7 +208,15 @@ export default function VirtualAssistant() {
     [availability],
   );
 
-  const stepNumber = step === 'service' ? 1 : step === 'issue' ? 2 : step === 'urgency' ? 3 : 4;
+  const stepNumber = {
+    service: 1,
+    location: 2,
+    property: 3,
+    issue: 4,
+    urgency: 5,
+    availability: 6,
+    done: 6,
+  }[step];
 
   const chooseService = (nextService: ServiceId) => {
     const selected = serviceOptions.find((option) => option.id === nextService);
@@ -157,14 +224,50 @@ export default function VirtualAssistant() {
 
     trackChatbotServiceSelected(selected.label);
     setService(nextService);
-    setStep('issue');
+    setStep('location');
     setMessages((current) => [
       ...current,
       { id: `user-service-${nextService}`, sender: 'user', text: selected.label },
       {
+        id: 'bot-location',
+        sender: 'bot',
+        text: 'Excelente escolha. A CNSOUSATEC atende o DF e o Entorno. Em qual região fica o atendimento?',
+      },
+    ]);
+  };
+
+  const chooseLocation = (nextLocation: LocationId) => {
+    const selected = locationOptions.find((option) => option.id === nextLocation);
+    if (!selected || step !== 'location') return;
+
+    trackChatbotLocationSelected(selectedServiceLabel, selected.label);
+    setLocation(nextLocation);
+    setStep('property');
+    setMessages((current) => [
+      ...current,
+      { id: `user-location-${nextLocation}`, sender: 'user', text: selected.label },
+      {
+        id: 'bot-property',
+        sender: 'bot',
+        text: 'Perfeito. Para direcionar os recursos e a equipe adequados, em qual tipo de ambiente será o atendimento?',
+      },
+    ]);
+  };
+
+  const chooseProperty = (nextProperty: PropertyId) => {
+    const selected = propertyOptions.find((option) => option.id === nextProperty);
+    if (!selected || step !== 'property') return;
+
+    trackChatbotPropertySelected(selectedServiceLabel, selected.label);
+    setProperty(nextProperty);
+    setStep('issue');
+    setMessages((current) => [
+      ...current,
+      { id: `user-property-${nextProperty}`, sender: 'user', text: selected.label },
+      {
         id: 'bot-issue',
         sender: 'bot',
-        text: 'Perfeito. Assim conseguimos encaminhar um profissional com o perfil adequado. O que está acontecendo agora?',
+        text: 'Ótimo. Agora me diga: o que está acontecendo? Isso ajuda a equipe a chegar mais preparada.',
       },
     ]);
   };
@@ -200,7 +303,7 @@ export default function VirtualAssistant() {
       {
         id: 'bot-availability',
         sender: 'bot',
-        text: 'Ótimo. Falta só informar sua melhor disponibilidade. Assim a conversa no WhatsApp já começa com tudo organizado.',
+        text: 'Estamos quase lá. Informe sua melhor disponibilidade e o WhatsApp abrirá com seu pedido já organizado.',
       },
     ]);
   };
@@ -218,7 +321,7 @@ export default function VirtualAssistant() {
       {
         id: 'bot-transfer',
         sender: 'bot',
-        text: 'Pronto. Seu pedido foi organizado. Toque no botão abaixo para falar diretamente com um especialista da CNSOUSATEC.',
+        text: 'Pronto. Seu pedido foi organizado com as informações que aceleram a triagem. Toque abaixo para falar com um especialista da CNSOUSATEC.',
       },
     ]);
   };
@@ -227,15 +330,19 @@ export default function VirtualAssistant() {
     trackChatbotRestart();
     setStep('service');
     setService(null);
+    setLocation(null);
+    setProperty(null);
     setIssue(null);
     setUrgency(null);
     setAvailability(null);
     setMessages([initialMessage]);
   };
 
-  const whatsappUrl = service && issue && urgency && availability
+  const whatsappUrl = service && location && property && issue && urgency && availability
     ? createWhatsAppUrl(
       selectedServiceLabel,
+      selectedLocationLabel,
+      selectedPropertyLabel,
       selectedIssueLabel,
       selectedUrgencyLabel,
       selectedAvailabilityLabel,
@@ -271,7 +378,7 @@ export default function VirtualAssistant() {
             <div>
               <span className="virtual-assistant-status" aria-hidden="true" />
               <h2 id="virtual-assistant-title">Atendimento CNSOUSATEC</h2>
-              <p>Triagem rápida para acelerar seu atendimento</p>
+              <p>Triagem guiada para acelerar seu atendimento</p>
             </div>
             <button
               type="button"
@@ -283,10 +390,10 @@ export default function VirtualAssistant() {
             </button>
           </header>
 
-          <div className="virtual-assistant-progress" aria-label={`Etapa ${stepNumber} de 4`}>
-            <span>Etapa {stepNumber} de 4</span>
+          <div className="virtual-assistant-progress" aria-label={`Etapa ${stepNumber} de 6`}>
+            <span>Etapa {stepNumber} de 6</span>
             <div aria-hidden="true">
-              <i style={{ width: `${Math.min(stepNumber, 4) * 25}%` }} />
+              <i style={{ width: `${Math.min(stepNumber, 6) * (100 / 6)}%` }} />
             </div>
           </div>
 
@@ -307,6 +414,32 @@ export default function VirtualAssistant() {
                     label={option.label}
                     description={option.description}
                     onClick={() => chooseService(option.id)}
+                  />
+                ))}
+              </div>
+            )}
+
+            {step === 'location' && (
+              <div className="virtual-assistant-options" aria-label="Escolha a região do atendimento">
+                {locationOptions.map((option) => (
+                  <OptionButton
+                    key={option.id}
+                    label={option.label}
+                    description={option.description}
+                    onClick={() => chooseLocation(option.id)}
+                  />
+                ))}
+              </div>
+            )}
+
+            {step === 'property' && (
+              <div className="virtual-assistant-options" aria-label="Escolha o tipo de ambiente">
+                {propertyOptions.map((option) => (
+                  <OptionButton
+                    key={option.id}
+                    label={option.label}
+                    description={option.description}
+                    onClick={() => chooseProperty(option.id)}
                   />
                 ))}
               </div>
@@ -352,7 +485,7 @@ export default function VirtualAssistant() {
                   <CheckCircle2 size={20} aria-hidden="true" />
                   <div>
                     <strong>Resumo do atendimento</strong>
-                    <span>{selectedServiceLabel} · {selectedUrgencyLabel}</span>
+                    <span>{selectedServiceLabel} · {selectedLocationLabel} · {selectedUrgencyLabel}</span>
                   </div>
                 </div>
                 <a

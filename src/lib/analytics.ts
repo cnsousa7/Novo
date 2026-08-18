@@ -61,6 +61,22 @@ export const trackChatbotServiceSelected = (service: string) => {
   });
 };
 
+export const trackChatbotLocationSelected = (service: string, location: string) => {
+  logEvent('chatbot_location_selected', {
+    component: 'virtual_assistant',
+    service,
+    location,
+  });
+};
+
+export const trackChatbotPropertySelected = (service: string, property: string) => {
+  logEvent('chatbot_property_selected', {
+    component: 'virtual_assistant',
+    service,
+    property,
+  });
+};
+
 export const trackChatbotIssueSelected = (service: string, issue: string) => {
   logEvent('chatbot_issue_selected', {
     component: 'virtual_assistant',
