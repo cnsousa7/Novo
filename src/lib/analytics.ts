@@ -61,6 +61,14 @@ export const trackChatbotServiceSelected = (service: string) => {
   });
 };
 
+export const trackChatbotIssueSelected = (service: string, issue: string) => {
+  logEvent('chatbot_issue_selected', {
+    component: 'virtual_assistant',
+    service,
+    issue,
+  });
+};
+
 export const trackChatbotUrgencySelected = (service: string, urgency: string) => {
   logEvent('chatbot_urgency_selected', {
     component: 'virtual_assistant',
@@ -69,11 +77,30 @@ export const trackChatbotUrgencySelected = (service: string, urgency: string) =>
   });
 };
 
-export const trackChatbotWhatsAppClick = (service: string, urgency: string) => {
+export const trackChatbotAvailabilitySelected = (service: string, availability: string) => {
+  logEvent('chatbot_availability_selected', {
+    component: 'virtual_assistant',
+    service,
+    availability,
+  });
+};
+
+export const trackChatbotRestart = () => {
+  logEvent('chatbot_restart', { component: 'virtual_assistant' });
+};
+
+export const trackChatbotWhatsAppClick = (
+  service: string,
+  urgency: string,
+  issue?: string,
+  availability?: string,
+) => {
   logEvent('chatbot_whatsapp_click', {
     component: 'virtual_assistant',
     service,
     urgency,
+    issue,
+    availability,
   });
 };
 
